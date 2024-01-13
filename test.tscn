@@ -5,3 +5,5 @@
 [node name="Hello World" type="Node2D" parent="."]
 
 [node name="And Another One" type="Node2D" parent="."]
+
+[node name="Cam Test" type="Node2D" parent="."]
