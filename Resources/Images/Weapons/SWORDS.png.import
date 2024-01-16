@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qwykbnsug773"
-path="res://.godot/imported/MACES.png-8f4b6515cd576198dbbc58195500bcb3.ctex"
+uid="uid://by4j0mtkrunqm"
+path="res://.godot/imported/SWORDS.png-5b8c9f6b988516d4202a39838a68ea65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/MACES.png"
-dest_files=["res://.godot/imported/MACES.png-8f4b6515cd576198dbbc58195500bcb3.ctex"]
+source_file="res://Resources/Images/Weapons/SWORDS.png"
+dest_files=["res://.godot/imported/SWORDS.png-5b8c9f6b988516d4202a39838a68ea65.ctex"]
 
 [params]
 

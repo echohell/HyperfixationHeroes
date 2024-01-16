@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by4j0mtkrunqm"
-path="res://.godot/imported/SWORDS.png-7c45e20cccab0f15da28e93dc1b0b646.ctex"
+uid="uid://df3f47en1cdt0"
+path="res://.godot/imported/SPEARS.png-103116e3008785e0e664a644d6893ec7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/SWORDS.png"
-dest_files=["res://.godot/imported/SWORDS.png-7c45e20cccab0f15da28e93dc1b0b646.ctex"]
+source_file="res://Resources/Images/Weapons/SPEARS.png"
+dest_files=["res://.godot/imported/SPEARS.png-103116e3008785e0e664a644d6893ec7.ctex"]
 
 [params]
 

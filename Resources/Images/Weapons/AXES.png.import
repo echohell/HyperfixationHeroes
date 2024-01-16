@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7o2gbgyn1k4"
-path="res://.godot/imported/coins.png-38ac3545f98fffcf58c195610c3058a2.ctex"
+uid="uid://c4ssi46238usa"
+path="res://.godot/imported/AXES.png-7c22d8c851db8f94ace847981ec0e53d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/coins.png"
-dest_files=["res://.godot/imported/coins.png-38ac3545f98fffcf58c195610c3058a2.ctex"]
+source_file="res://Resources/Images/Weapons/AXES.png"
+dest_files=["res://.godot/imported/AXES.png-7c22d8c851db8f94ace847981ec0e53d.ctex"]
 
 [params]
 

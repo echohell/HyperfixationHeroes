@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df3f47en1cdt0"
-path="res://.godot/imported/SPEARS.png-0122f66b8eeb9ef07a1f38ae4e4f5f18.ctex"
+uid="uid://qwykbnsug773"
+path="res://.godot/imported/MACES.png-2eded48910a14ca6fc3d0099f4697f67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/SPEARS.png"
-dest_files=["res://.godot/imported/SPEARS.png-0122f66b8eeb9ef07a1f38ae4e4f5f18.ctex"]
+source_file="res://Resources/Images/Weapons/MACES.png"
+dest_files=["res://.godot/imported/MACES.png-2eded48910a14ca6fc3d0099f4697f67.ctex"]
 
 [params]
 

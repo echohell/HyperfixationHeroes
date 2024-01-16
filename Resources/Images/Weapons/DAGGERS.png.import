@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf1wrlc1yfmgx"
-path="res://.godot/imported/rend.png-84ba4c0528996056a761f31aa0b23998.ctex"
+uid="uid://b346bs7ewbeaw"
+path="res://.godot/imported/DAGGERS.png-f88fcb8218b41e736d3f92e7a3df731c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/rend.png"
-dest_files=["res://.godot/imported/rend.png-84ba4c0528996056a761f31aa0b23998.ctex"]
+source_file="res://Resources/Images/Weapons/DAGGERS.png"
+dest_files=["res://.godot/imported/DAGGERS.png-f88fcb8218b41e736d3f92e7a3df731c.ctex"]
 
 [params]
 
