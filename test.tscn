@@ -17,7 +17,10 @@ sources/0 = SubResource("TileSetAtlasSource_ig105")
 
 [node name="Test" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Background Tiles" type="TileMap" parent="."]
+format = 2
+
+[node name="Obstacle Tiles" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_tloqj")
 format = 2
 layer_0/z_index = -5
@@ -27,11 +30,10 @@ layer_0/tile_data = PackedInt32Array(131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 3
 y_sort_enabled = true
 position = Vector2(197, 96)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../Camera2D")
+[node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(197, 96)
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../Camera2D")
 
 [node name="Enemy" parent="." instance=ExtResource("2_eqq3f")]
 position = Vector2(296, 113)

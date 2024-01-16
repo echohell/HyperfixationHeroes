@@ -4,14 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bkp14leo4evr8" path="res://Resources/Images/AI/enemynpc.png" id="2_w08u5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bmef7"]
-radius = 18.0
+radius = 8.0
 
 [node name="enemy" type="CharacterBody2D"]
 position = Vector2(149, 125)
 script = ExtResource("1_cgs2x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2.375, 2.375)
 texture = ExtResource("2_w08u5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

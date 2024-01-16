@@ -1,7 +1,7 @@
+Sprite2D
 TileMap
 Node3D
 CollisionShape2D
-Sprite2D
 CharacterBody2D
 RemoteTransform2D
 Camera2D
