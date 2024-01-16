@@ -1,1 +1,9 @@
+TileMap
+Node3D
+CollisionShape2D
+Sprite2D
+CharacterBody2D
+RemoteTransform2D
+Camera2D
+Area2D
 Node2D
