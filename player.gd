@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 @export var moveSpeed : float = 300
 
+func _ready():
+	resize(1,1)                 #test for resizing individual child nodes
+
 func _physics_process(_delta):
 	var inputDir = Vector2(
 	Input.get_action_strength("right") - Input.get_action_strength("left"), 
@@ -10,3 +13,6 @@ func _physics_process(_delta):
 	
 	velocity = inputDir * moveSpeed
 	move_and_slide()
+
+func resize(x,y):
+	get_node("Sprite2D").scale *= Vector2(x, y)               #test to pull node from parent to child

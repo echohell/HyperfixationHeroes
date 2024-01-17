@@ -1,12 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
 ::res://::1705187461
 enemy.gd::GDScript::-1::1705437510::0::1::::<>CharacterBody2D<>::
-enemy.tscn::PackedScene::6180164649299095863::1705444202::0::1::::<><>::res://enemy.gd<>uid://bkp14leo4evr8::::res://Resources/Images/AI/enemynpc.png
+enemy.tscn::PackedScene::6180164649299095863::1705445030::0::1::::<><>::res://enemy.gd<>uid://bkp14leo4evr8::::res://Resources/Images/AI/enemynpc.png
 icon.svg::CompressedTexture2D::4564053405234323350::1705185090::1705437660::1::::<><>::
 player.gd::GDScript::-1::1705443442::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::7796196469435114984::1705444202::0::1::::<><>::uid://caxx7whbm05yt::::res://Resources/Images/AI/friendlynpc.png<>res://player.gd<>res://Sprite2D.gd
-Sprite2D.gd::GDScript::-1::1705443978::0::1::::<>Sprite2D<>::
-test.tscn::PackedScene::1755133044910437909::1705444202::0::1::::<><>::uid://dh8si7k14mkkl::::res://Resources/Images/terrain/crate.png<>uid://djcshmvvcjexc::::res://player.tscn<>uid://cubyn5vcobkbf::::res://enemy.tscn
+player.tscn::PackedScene::7796196469435114984::1705445030::0::1::::<><>::uid://caxx7whbm05yt::::res://Resources/Images/AI/friendlynpc.png<>res://player.gd
+test.tscn::PackedScene::1755133044910437909::1705445030::0::1::::<><>::uid://dh8si7k14mkkl::::res://Resources/Images/terrain/crate.png<>uid://djcshmvvcjexc::::res://player.tscn<>uid://cubyn5vcobkbf::::res://enemy.tscn
 ::res://addons/::1705350820
 ::res://addons/dialogue_manager/::1705350820
 constants.gd::GDScript::-1::1705350822::0::1::::<>Node<>::
