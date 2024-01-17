@@ -14,8 +14,13 @@ collision_mask = 2
 input_pickable = true
 script = ExtResource("1_cgs2x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_bmef7")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_w08u5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_bmef7")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
