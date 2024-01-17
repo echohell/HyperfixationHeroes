@@ -22,9 +22,9 @@ offset_left = -16.0
 offset_top = -40.0
 offset_right = 24.0
 offset_bottom = -17.0
+text = "test"
 horizontal_alignment = 1
 vertical_alignment = 1
-justification_flags = 161
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bmef7")
