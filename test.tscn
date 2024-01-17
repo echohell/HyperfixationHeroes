@@ -31,6 +31,7 @@ layer_0/tile_data = PackedInt32Array(131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 3
 
 [node name="Enemy" parent="." instance=ExtResource("2_eqq3f")]
 position = Vector2(296, 113)
+scale = Vector2(1, 1)
 
 [node name="Bones" parent="." instance=ExtResource("3_jmpg2")]
 

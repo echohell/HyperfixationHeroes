@@ -22,3 +22,5 @@ func resize(x,y):
 
 func collect(item):
 	inventory.insert(item)
+
+
