@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://bblyig5amwefd"]
+
+[ext_resource type="Texture2D" uid="uid://cb00hpsvopqpy" path="res://Inventory/Inventory UI/inventoryitem.png" id="1_f8qiw"]
+[ext_resource type="Script" path="res://Inventory/inventory_slot_2.gd" id="1_u38cg"]
+
+[sub_resource type="Theme" id="Theme_egmic"]
+
+[node name="inventorySlot2" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
+script = ExtResource("1_u38cg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_f8qiw")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 31.0
+offset_bottom = 31.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="ItemImage" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(20, 23)
+layout_mode = 0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 18.0
+offset_bottom = 22.0
+scale = Vector2(0.75, 0.75)
+theme = SubResource("Theme_egmic")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 5
+text = "99"
+horizontal_alignment = 2

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="inventoryItem" load_steps=3 format=3 uid="uid://t38x0lmmohlc"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_items.gd" id="1_ctnpx"]
+[ext_resource type="Texture2D" uid="uid://bbqx7jk7ex0gl" path="res://Inventory/Inventory Item PNGs/abacus.png" id="2_1pt47"]
+
+[resource]
+script = ExtResource("1_ctnpx")
+name = "Abacus"
+texture = ExtResource("2_1pt47")

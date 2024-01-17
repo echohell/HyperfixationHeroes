@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://6x42spn354qj"]
+
+[ext_resource type="Script" path="res://Oddstone.gd" id="1_cppsn"]
+[ext_resource type="Texture2D" uid="uid://bumkpqy1oq7pr" path="res://Inventory/Inventory Item PNGs/oddstone.png" id="2_j4ehf"]
+[ext_resource type="Resource" uid="uid://ddovxy5vvekd1" path="res://Inventory/Items/oddstone.tres" id="2_pbhtk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fxlbp"]
+radius = 24.0
+
+[node name="Oddstone" type="StaticBody2D"]
+position = Vector2(424, 176)
+script = ExtResource("1_cppsn")
+item = ExtResource("2_pbhtk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_j4ehf")
+
+[node name="interaction_zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_zone"]
+shape = SubResource("CircleShape2D_fxlbp")
+
+[connection signal="body_entered" from="interaction_zone" to="." method="_on_interaction_zone_body_entered"]

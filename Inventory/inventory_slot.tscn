@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl8ew3h8fp34l"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_slot.gd" id="1_l1us3"]
+[ext_resource type="Texture2D" uid="uid://b7bnnahl216cw" path="res://Inventory/Inventory UI/inventoryitem2.png" id="1_vpxu3"]
+
+[sub_resource type="Theme" id="Theme_nl7id"]
+
+[node name="inventorySlot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
+script = ExtResource("1_l1us3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vpxu3")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 31.0
+offset_bottom = 31.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="ItemImage" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(19, 23)
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 23.0
+scale = Vector2(0.75, 0.75)
+theme = SubResource("Theme_nl7id")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 5
+text = "99"
+horizontal_alignment = 2

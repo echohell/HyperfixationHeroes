@@ -1,4 +1,6 @@
 res://test.tscn
-res://player.gd
-res://enemy.tscn
-res://player.tscn
+res://Inventory/PlayerInventory.tres
+res://Resources/Images/AI/enemy.tscn
+res://Resources/Images/AI/player.tscn
+res://oddstone.tscn
+res://Oddstone.gd
