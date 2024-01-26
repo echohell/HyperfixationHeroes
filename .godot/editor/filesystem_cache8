@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
 ::res://::1705187461
 Animalbones.gd::GDScript::-1::1705482390::0::1::::<>CharacterBody2D<>::
-astar.tscn::PackedScene::1218629864708422228::1706232810::0::1::::<><>::res://AStarManager.gd
+astar.tscn::PackedScene::1218629864708422228::1706233248::0::1::::<><>::res://AStarManager.gd
 AStarManager.gd::GDScript::-1::1706231494::0::1::::AstarGrid<>Node2D<>::
 Bones.gd::GDScript::-1::1705485086::0::1::::<>StaticBody2D<>::
 bones.tscn::PackedScene::970168823587407295::1705483430::0::1::::<><>::res://Bones.gd<>uid://lril1v3w72n::::res://Inventory/Items/animalbones.tres<>uid://c3es6wfrveeli::::res://Inventory/Inventory Item PNGs/animalbones.png
@@ -11,7 +11,7 @@ inventory_slot_values.gd::GDScript::-1::1705478484::0::1::::InventorySlotValue<>
 Oddstone.gd::GDScript::-1::1705486230::0::1::::<>StaticBody2D<>::
 oddstone.tscn::PackedScene::2225144819569698349::1705486234::0::1::::<><>::res://Oddstone.gd<>uid://bumkpqy1oq7pr::::res://Inventory/Inventory Item PNGs/oddstone.png<>uid://ddovxy5vvekd1::::res://Inventory/Items/oddstone.tres
 PathDraw.gd::GDScript::-1::1706233230::0::1::::<>Node2D<>::
-test.tscn::PackedScene::1755133044910437909::1706232810::0::1::::<><>::uid://bkuwhlexee28x::::res://Resources/Images/tilmapCC/tilemap.png<>uid://dh8si7k14mkkl::::res://Resources/Images/terrain/crate.png<>uid://rmkwkewfpkxw::::res://astar.tscn<>uid://cubyn5vcobkbf::::res://Resources/Images/AI/enemy.tscn<>uid://n27sk3irioqx::::res://bones.tscn<>uid://6x42spn354qj::::res://oddstone.tscn<>res://Resources/Images/AI/player.gd<>uid://caxx7whbm05yt::::res://Resources/Images/AI/friendlynpc.png<>uid://d1rnc2lkjgj7i::::res://Inventory/inventory_ui.tscn<>res://PathDraw.gd
+test.tscn::PackedScene::1755133044910437909::1706233248::0::1::::<><>::uid://bkuwhlexee28x::::res://Resources/Images/tilmapCC/tilemap.png<>uid://dh8si7k14mkkl::::res://Resources/Images/terrain/crate.png<>uid://rmkwkewfpkxw::::res://astar.tscn<>uid://cubyn5vcobkbf::::res://Resources/Images/AI/enemy.tscn<>uid://n27sk3irioqx::::res://bones.tscn<>uid://6x42spn354qj::::res://oddstone.tscn<>res://Resources/Images/AI/player.gd<>uid://caxx7whbm05yt::::res://Resources/Images/AI/friendlynpc.png<>uid://d1rnc2lkjgj7i::::res://Inventory/inventory_ui.tscn<>res://PathDraw.gd
 ::res://addons/::1705350820
 ::res://addons/dialogue_manager/::1705350820
 constants.gd::GDScript::-1::1705350822::0::1::::<>Node<>::
@@ -78,7 +78,7 @@ inventory_slot.tscn::PackedScene::5613326751699613053::1705485934::0::1::::<><>:
 inventory_slot_2.gd::GDScript::-1::1705483242::0::1::::<>Panel<>::
 inventory_slot_2.tscn::PackedScene::2480789538304564141::1705485934::0::1::::<><>::uid://cb00hpsvopqpy::::res://Inventory/Inventory UI/inventoryitem.png<>res://Inventory/inventory_slot_2.gd
 inventory_ui.tscn::PackedScene::9020060735570866220::1705485934::0::1::::<><>::res://Inventory/inventoryUI.gd<>uid://bffwcw42pi5wv::::res://Inventory/Inventory UI/inventory.png<>uid://cl8ew3h8fp34l::::res://Inventory/inventory_slot.tscn<>uid://bblyig5amwefd::::res://Inventory/inventory_slot_2.tscn
-PlayerInventory.tres::Resource/Inventory::6282933886061958106::1706229470::0::1::::<><>::res://Inventory/Inventory.gd<>res://inventory_slot_values.gd
+PlayerInventory.tres::Resource/Inventory::6282933886061958106::1706233248::0::1::::<><>::res://Inventory/Inventory.gd<>res://inventory_slot_values.gd
 ::res://Inventory/Inventory Item PNGs/::1705458907
 abacus.png::CompressedTexture2D::2491093697253082675::1705458928::1705458930::1::::<><>::
 animalbones.png::CompressedTexture2D::6747535929786548830::1705458928::1705458930::1::::<><>::
@@ -130,7 +130,7 @@ sandstorm.png::CompressedTexture2D::8075347328647193436::1705349696::1705349700:
 Sandtrap.png::CompressedTexture2D::1775545627541703104::1705349696::1705349700::1::::<><>::
 ::res://Resources/Images/AI/::1705349695
 enemy.gd::GDScript::-1::1706232810::0::1::::<>CharacterBody2D<>::
-enemy.tscn::PackedScene::6180164649299095863::1706232810::0::1::::<><>::res://Resources/Images/AI/enemy.gd<>uid://bkp14leo4evr8::::res://Resources/Images/AI/enemynpc.png
+enemy.tscn::PackedScene::6180164649299095863::1706233248::0::1::::<><>::res://Resources/Images/AI/enemy.gd<>uid://bkp14leo4evr8::::res://Resources/Images/AI/enemynpc.png
 enemynpc.png::CompressedTexture2D::3120905800830592615::1705349696::1705349700::1::::<><>::
 friendlynpc.png::CompressedTexture2D::4821776858357985955::1705349696::1705444448::1::::<><>::
 image.png::CompressedTexture2D::5776973806087579892::1705437576::1705437576::1::::<><>::

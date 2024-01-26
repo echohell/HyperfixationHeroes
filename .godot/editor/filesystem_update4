@@ -2,3 +2,4 @@ res://test.tscn
 res://Inventory/PlayerInventory.tres
 res://Resources/Images/AI/enemy.tscn
 res://astar.tscn
+res://PathDraw.gd
