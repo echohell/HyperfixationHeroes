@@ -1,6 +1,4 @@
 res://test.tscn
 res://Inventory/PlayerInventory.tres
 res://Resources/Images/AI/enemy.tscn
-res://Damage.gd
-res://Resources/Images/AI/enemy.gd
-res://damage.tscn
+res://astar.tscn

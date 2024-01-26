@@ -12,18 +12,19 @@ func _ready():
 
 func _input(event):
 	if (pressed == true):
-		var damage = round(randf_range(10,20))
+		var damageRange = round(randf_range(10,20))
 		if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			if get_viewport_rect().has_point(to_local(event.position)):
 				var text = DAMAGEPOPUP.instantiate()
-				text.amount = damage
+				text.amount = damageRange
 				add_child(text)
-				_updatehp(damage)
+				_updatehp(damageRange)
 			
-func _updatehp(damage):
-	enemyhp = enemyhp - damage
+func _updatehp(damageVal):
+	enemyhp = enemyhp - damageVal
 	if enemyhp <= 0:
 		queue_free()
+		
 	elif enemyhp > 0:
 		label.set_text(str(enemyhp) + "/" + str(enemymaxhp))
 

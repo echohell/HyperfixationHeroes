@@ -18,6 +18,8 @@ shape = SubResource("CircleShape2D_promp")
 position = Vector2(29, 30)
 texture = ExtResource("1_0v80j")
 
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
 [node name="inventoryUI" parent="." instance=ExtResource("4_v17my")]
 offset_left = -46.0
 offset_top = -105.0
