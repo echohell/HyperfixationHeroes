@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://rmkwkewfpkxw"]
 
-[ext_resource type="Script" path="res://AStarManager.gd" id="1_ev7j4"]
+[ext_resource type="Script" path="res://Scripts/Pathfinding/AStarManager.gd" id="1_ev7j4"]
 
 [node name="AStarManager" type="Node2D"]
 script = ExtResource("1_ev7j4")

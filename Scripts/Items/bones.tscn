@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://n27sk3irioqx"]
 
-[ext_resource type="Script" path="res://Bones.gd" id="1_7o0nb"]
+[ext_resource type="Script" path="res://Scripts/Items/Bones.gd" id="1_7o0nb"]
 [ext_resource type="Resource" uid="uid://lril1v3w72n" path="res://Inventory/Items/animalbones.tres" id="2_mgi8d"]
 [ext_resource type="Texture2D" uid="uid://c3es6wfrveeli" path="res://Inventory/Inventory Item PNGs/animalbones.png" id="3_87k5g"]
 

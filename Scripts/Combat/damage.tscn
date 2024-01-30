@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bhg7crnvojkps"]
 
-[ext_resource type="Script" path="res://Damage.gd" id="1_50ljv"]
+[ext_resource type="Script" path="res://Scripts/Combat/Damage.gd" id="1_50ljv"]
 
 [sub_resource type="Animation" id="Animation_5vtfm"]
 length = 0.001

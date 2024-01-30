@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="inventoryItem" load_steps=3 format=3 uid="uid://bbeae68kfdou8"]
 
-[ext_resource type="Script" path="res://Inventory/inventory_items.gd" id="1_lsyuv"]
+[ext_resource type="Script" path="res://Inventory/UI/inventory_items.gd" id="1_lsyuv"]
 [ext_resource type="Texture2D" uid="uid://e6t5060kvmtg" path="res://Inventory/Inventory Item PNGs/woodenbarrel.png" id="2_7fde5"]
 
 [resource]

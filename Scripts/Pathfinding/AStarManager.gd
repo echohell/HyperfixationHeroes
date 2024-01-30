@@ -3,7 +3,7 @@ extends Node2D
 class_name AstarGrid
 
 @export var player: Player;
-@onready var tileMap = $"../Background Tiles"
+@onready var tileMap = $"../Foreground Tiles"
 
 var astarGrid: AStarGrid2D
 var current_path: Array[Vector2i]

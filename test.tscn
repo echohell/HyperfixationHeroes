@@ -1,15 +1,28 @@
-[gd_scene load_steps=14 format=3 uid="uid://0ag1xivi485n"]
+[gd_scene load_steps=17 format=3 uid="uid://0ag1xivi485n"]
 
 [ext_resource type="Texture2D" uid="uid://bkuwhlexee28x" path="res://Resources/Images/tilmapCC/tilemap.png" id="1_72hns"]
 [ext_resource type="Texture2D" uid="uid://dh8si7k14mkkl" path="res://Resources/Images/terrain/crate.png" id="1_bmqws"]
-[ext_resource type="PackedScene" uid="uid://rmkwkewfpkxw" path="res://astar.tscn" id="1_cmwrw"]
-[ext_resource type="PackedScene" uid="uid://cubyn5vcobkbf" path="res://Resources/Images/AI/enemy.tscn" id="2_eqq3f"]
-[ext_resource type="PackedScene" uid="uid://n27sk3irioqx" path="res://bones.tscn" id="3_jmpg2"]
-[ext_resource type="PackedScene" uid="uid://6x42spn354qj" path="res://oddstone.tscn" id="4_eenl8"]
-[ext_resource type="Script" path="res://Resources/Images/AI/player.gd" id="7_inrjp"]
+[ext_resource type="PackedScene" uid="uid://rmkwkewfpkxw" path="res://Scripts/Pathfinding/astar.tscn" id="1_cmwrw"]
+[ext_resource type="PackedScene" uid="uid://cubyn5vcobkbf" path="res://Scripts/NPC ENEMY/enemy.tscn" id="2_eqq3f"]
+[ext_resource type="PackedScene" uid="uid://n27sk3irioqx" path="res://Scripts/Items/bones.tscn" id="3_jmpg2"]
+[ext_resource type="PackedScene" uid="uid://6x42spn354qj" path="res://Scripts/Items/oddstone.tscn" id="4_eenl8"]
+[ext_resource type="Script" path="res://Scripts/Player/player.gd" id="7_inrjp"]
 [ext_resource type="Texture2D" uid="uid://caxx7whbm05yt" path="res://Resources/Images/AI/friendlynpc.png" id="8_w71om"]
-[ext_resource type="PackedScene" uid="uid://d1rnc2lkjgj7i" path="res://Inventory/inventory_ui.tscn" id="9_mpwby"]
-[ext_resource type="Script" path="res://PathDraw.gd" id="10_k1v2s"]
+[ext_resource type="PackedScene" uid="uid://d1rnc2lkjgj7i" path="res://Inventory/UI/inventory_ui.tscn" id="9_mpwby"]
+[ext_resource type="Script" path="res://Scripts/Pathfinding/PathDraw.gd" id="10_k1v2s"]
+[ext_resource type="Script" path="res://Scripts/Quest/Quest.gd" id="11_mw4qn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45gwf"]
+texture = ExtResource("1_72hns")
+separation = Vector2i(1, 1)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tlyki"]
+sources/0 = SubResource("TileSetAtlasSource_45gwf")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nn7uc"]
 texture = ExtResource("1_72hns")
@@ -189,6 +202,12 @@ position = Vector2(-40, -8)
 player = NodePath("../Player2")
 
 [node name="Background Tiles" type="TileMap" parent="."]
+z_index = -1
+position = Vector2(8, 8)
+tile_set = SubResource("TileSet_tlyki")
+format = 2
+
+[node name="Foreground Tiles" type="TileMap" parent="."]
 position = Vector2(8, 8)
 tile_set = SubResource("TileSet_qxq6r")
 format = 2
@@ -223,5 +242,12 @@ offset_bottom = -12.0
 metadata/_edit_use_anchors_ = true
 
 [node name="PathDraw" type="Node2D" parent="." node_paths=PackedStringArray("astar")]
+z_index = 1
 script = ExtResource("10_k1v2s")
 astar = NodePath("../AStarManager")
+
+[node name="testingQuest" type="Node2D" parent="."]
+script = ExtResource("11_mw4qn")
+id = 1
+questName = "test"
+Description = "test"

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var DAMAGEPOPUP = preload("res://damage.tscn")
+var DAMAGEPOPUP = preload("res://Scripts/Combat/damage.tscn")
 var pressed = false
 var enemyhp : int = 200
 var enemymaxhp : int = 200

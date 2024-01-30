@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://djcshmvvcjexc"]
 
 [ext_resource type="Texture2D" uid="uid://caxx7whbm05yt" path="res://Resources/Images/AI/friendlynpc.png" id="1_0v80j"]
-[ext_resource type="Script" path="res://Resources/Images/AI/player.gd" id="1_53gp7"]
-[ext_resource type="PackedScene" uid="uid://d1rnc2lkjgj7i" path="res://Inventory/inventory_ui.tscn" id="4_v17my"]
+[ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_53gp7"]
+[ext_resource type="PackedScene" uid="uid://d1rnc2lkjgj7i" path="res://Inventory/UI/inventory_ui.tscn" id="4_v17my"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_promp"]
 radius = 8.06226

@@ -3,7 +3,7 @@ extends Node2D
 class_name Player
 
 @export var astar: AstarGrid
-@export var inventory: Inventory = preload("res://Inventory/PlayerInventory.tres")
+@export var inventory: Inventory = preload("res://Inventory/UI/PlayerInventory.tres")
 @export var moveSpeed : float = 300
 @export var path : Array[Vector2i]
 
