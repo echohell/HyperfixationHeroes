@@ -1,12 +1,2 @@
 res://test.tscn
-res://Inventory/PlayerInventory.tres
-res://Scripts/Pathfinding/astar.tscn
-res://Scripts/Player/player.gd
-res://Scripts/NPC ENEMY/enemy.gd
-res://Inventory/Inventory UI/inventoryUI.gd
-res://Scripts/Skills/Skill.gd
-res://Scripts/Quest/Quest.gd
-res://Scripts/Items/Item.gd
-res://Inventory/UI/inventoryUI.gd
-res://Scripts/Pathfinding/AStarManager.gd
-res://Scripts/Pathfinding/PathDraw.gd
+res://Inventory/UI/PlayerInventory.tres

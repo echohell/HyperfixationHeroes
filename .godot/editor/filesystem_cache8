@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
 ::res://::1705187461
-test.tscn::PackedScene::1755133044910437909::1706641506::0::1::::<><>::uid://bkuwhlexee28x::::res://Resources/Images/tilmapCC/tilemap.png<>uid://dh8si7k14mkkl::::res://Resources/Images/terrain/crate.png<>uid://rmkwkewfpkxw::::res://Scripts/Pathfinding/astar.tscn<>uid://cubyn5vcobkbf::::res://Scripts/NPC ENEMY/enemy.tscn<>uid://n27sk3irioqx::::res://Scripts/Items/bones.tscn<>uid://6x42spn354qj::::res://Scripts/Items/oddstone.tscn<>res://Scripts/Player/player.gd<>uid://caxx7whbm05yt::::res://Resources/Images/AI/friendlynpc.png<>uid://d1rnc2lkjgj7i::::res://Scripts/UI/inventory_ui.tscn<>res://Scripts/Pathfinding/PathDraw.gd<>res://Scripts/Quest/Quest.gd
+test.tscn::PackedScene::1755133044910437909::1706721436::0::1::::<><>::uid://bkuwhlexee28x::::res://Resources/Images/tilmapCC/tilemap.png<>uid://dh8si7k14mkkl::::res://Resources/Images/terrain/crate.png<>uid://rmkwkewfpkxw::::res://Scripts/Pathfinding/astar.tscn<>uid://cubyn5vcobkbf::::res://Scripts/NPC ENEMY/enemy.tscn<>uid://n27sk3irioqx::::res://Scripts/Items/bones.tscn<>uid://6x42spn354qj::::res://Scripts/Items/oddstone.tscn<>res://Scripts/Player/player.gd<>uid://caxx7whbm05yt::::res://Resources/Images/AI/friendlynpc.png<>uid://d1rnc2lkjgj7i::::res://Inventory/UI/inventory_ui.tscn<>res://Scripts/Pathfinding/PathDraw.gd<>res://Scripts/Quest/Quest.gd
 ::res://addons/::1705350820
 ::res://addons/dialogue_manager/::1705350820
 constants.gd::GDScript::-1::1705350822::0::1::::<>Node<>::
@@ -85,20 +85,30 @@ purpleborder.png::CompressedTexture2D::1776423837438054060::1705458962::17054589
 redborder.png::CompressedTexture2D::5803099285262958755::1705458962::1705458962::1::::<><>::
 whiteborder.png::CompressedTexture2D::384806324598608112::1705458962::1705458962::1::::<><>::
 ::res://Inventory/Items/::1705459098
-abacus.tres::Resource/inventoryItem::1393436670895816964::1706641474::0::1::::<><>::res://Scripts/UI/inventory_items.gd<>uid://bbqx7jk7ex0gl::::res://Inventory/Inventory Item PNGs/abacus.png
-animalbones.tres::Resource/inventoryItem::23755249437156915::1706641474::0::1::::<><>::res://Scripts/UI/inventory_items.gd<>uid://c3es6wfrveeli::::res://Inventory/Inventory Item PNGs/animalbones.png
-basket.tres::Resource/inventoryItem::7876227023910042316::1706641474::0::1::::<><>::res://Scripts/UI/inventory_items.gd<>uid://w8bxq3ntf7pc::::res://Inventory/Inventory Item PNGs/basket.png
-bell.tres::Resource/inventoryItem::5951956181106111378::1706641474::0::1::::<><>::res://Scripts/UI/inventory_items.gd<>uid://dpf7rd8mofnqs::::res://Inventory/Inventory Item PNGs/bell.png
-brokenglass.tres::Resource/inventoryItem::316992382433073933::1706641474::0::1::::<><>::res://Scripts/UI/inventory_items.gd<>uid://elybji3dk8yo::::res://Inventory/Inventory Item PNGs/brokenglass.png
-burntpaper.tres::Resource/inventoryItem::4814783790041857675::1706641474::0::1::::<><>::res://Scripts/UI/inventory_items.gd<>uid://dgpwhadkx3ddy::::res://Inventory/Inventory Item PNGs/burntpaper.png
-dirtypipe.tres::Resource/inventoryItem::2709626684225575246::1706641474::0::1::::<><>::res://Scripts/UI/inventory_items.gd<>uid://ctisfqcwuan4p::::res://Inventory/Inventory Item PNGs/dirtypipe.png
-humanbones.tres::Resource/inventoryItem::4705570330176926053::1706641474::0::1::::<><>::res://Scripts/UI/inventory_items.gd<>uid://bg1ll5knakxng::::res://Inventory/Inventory Item PNGs/humanbones.png
-oddstone.tres::Resource/inventoryItem::7400047308545057336::1706641474::0::1::::<><>::res://Scripts/UI/inventory_items.gd<>uid://bumkpqy1oq7pr::::res://Inventory/Inventory Item PNGs/oddstone.png
-scrap.tres::Resource/inventoryItem::1013109598408989716::1706641474::0::1::::<><>::res://Scripts/UI/inventory_items.gd<>uid://dpo887gscbny7::::res://Inventory/Inventory Item PNGs/scrap.png
-scryingorb.tres::Resource/inventoryItem::5040150023703200260::1706641474::0::1::::<><>::res://Scripts/UI/inventory_items.gd<>uid://dmavhhayy0imy::::res://Inventory/Inventory Item PNGs/scryingorb.png
-woodenbarrel.tres::Resource/inventoryItem::2464875861186563049::1706641474::0::1::::<><>::res://Scripts/UI/inventory_items.gd<>uid://e6t5060kvmtg::::res://Inventory/Inventory Item PNGs/woodenbarrel.png
-woodencrate.tres::Resource/inventoryItem::3498609469335787246::1706641474::0::1::::<><>::res://Scripts/UI/inventory_items.gd<>uid://bq4yb53x1e4vs::::res://Inventory/Inventory Item PNGs/woodencrate.png
-::res://Inventory/UI/::0
+abacus.tres::Resource/Resource::1393436670895816964::1706641506::0::1::::<><>::res://Inventory/UI/inventory_items.gd<>uid://bbqx7jk7ex0gl::::res://Inventory/Inventory Item PNGs/abacus.png
+animalbones.tres::Resource/Resource::23755249437156915::1706641506::0::1::::<><>::res://Inventory/UI/inventory_items.gd<>uid://c3es6wfrveeli::::res://Inventory/Inventory Item PNGs/animalbones.png
+basket.tres::Resource/Resource::7876227023910042316::1706641506::0::1::::<><>::res://Inventory/UI/inventory_items.gd<>uid://w8bxq3ntf7pc::::res://Inventory/Inventory Item PNGs/basket.png
+bell.tres::Resource/Resource::5951956181106111378::1706641506::0::1::::<><>::res://Inventory/UI/inventory_items.gd<>uid://dpf7rd8mofnqs::::res://Inventory/Inventory Item PNGs/bell.png
+brokenglass.tres::Resource/Resource::316992382433073933::1706641506::0::1::::<><>::res://Inventory/UI/inventory_items.gd<>uid://elybji3dk8yo::::res://Inventory/Inventory Item PNGs/brokenglass.png
+burntpaper.tres::Resource/Resource::4814783790041857675::1706641506::0::1::::<><>::res://Inventory/UI/inventory_items.gd<>uid://dgpwhadkx3ddy::::res://Inventory/Inventory Item PNGs/burntpaper.png
+dirtypipe.tres::Resource/Resource::2709626684225575246::1706641506::0::1::::<><>::res://Inventory/UI/inventory_items.gd<>uid://ctisfqcwuan4p::::res://Inventory/Inventory Item PNGs/dirtypipe.png
+humanbones.tres::Resource/Resource::4705570330176926053::1706641506::0::1::::<><>::res://Inventory/UI/inventory_items.gd<>uid://bg1ll5knakxng::::res://Inventory/Inventory Item PNGs/humanbones.png
+oddstone.tres::Resource/Resource::7400047308545057336::1706641506::0::1::::<><>::res://Inventory/UI/inventory_items.gd<>uid://bumkpqy1oq7pr::::res://Inventory/Inventory Item PNGs/oddstone.png
+scrap.tres::Resource/Resource::1013109598408989716::1706641506::0::1::::<><>::res://Inventory/UI/inventory_items.gd<>uid://dpo887gscbny7::::res://Inventory/Inventory Item PNGs/scrap.png
+scryingorb.tres::Resource/Resource::5040150023703200260::1706641506::0::1::::<><>::res://Inventory/UI/inventory_items.gd<>uid://dmavhhayy0imy::::res://Inventory/Inventory Item PNGs/scryingorb.png
+woodenbarrel.tres::Resource/Resource::2464875861186563049::1706641506::0::1::::<><>::res://Inventory/UI/inventory_items.gd<>uid://e6t5060kvmtg::::res://Inventory/Inventory Item PNGs/woodenbarrel.png
+woodencrate.tres::Resource/Resource::3498609469335787246::1706641506::0::1::::<><>::res://Inventory/UI/inventory_items.gd<>uid://bq4yb53x1e4vs::::res://Inventory/Inventory Item PNGs/woodencrate.png
+::res://Inventory/UI/::1706634891
+Inventory.gd::GDScript::-1::1705485526::0::1::::Inventory<>Resource<>::
+inventoryUI.gd::GDScript::-1::1706641562::0::1::::<>Control<>::
+inventory_items.gd::GDScript::-1::1705458810::0::1::::inventoryItem<>Resource<>::
+inventory_slot.gd::GDScript::-1::1705483242::0::1::::<>Panel<>::
+inventory_slot.tscn::PackedScene::5613326751699613053::1706641506::0::1::::<><>::res://Inventory/UI/inventory_slot.gd<>uid://b7bnnahl216cw::::res://Inventory/Inventory UI/inventoryitem2.png
+inventory_slot_2.gd::GDScript::-1::1705483242::0::1::::<>Panel<>::
+inventory_slot_2.tscn::PackedScene::2480789538304564141::1706641506::0::1::::<><>::uid://cb00hpsvopqpy::::res://Inventory/Inventory UI/inventoryitem.png<>res://Inventory/UI/inventory_slot_2.gd
+inventory_slot_values.gd::GDScript::-1::1705478484::0::1::::InventorySlotValue<>Resource<>::
+inventory_ui.tscn::PackedScene::9020060735570866220::1706641506::0::1::::<><>::res://Inventory/UI/inventoryUI.gd<>uid://bffwcw42pi5wv::::res://Inventory/Inventory UI/inventory.png<>uid://cl8ew3h8fp34l::::res://Inventory/UI/inventory_slot.tscn<>uid://bblyig5amwefd::::res://Inventory/UI/inventory_slot_2.tscn
+PlayerInventory.tres::Resource/Inventory::6282933886061958106::1706721348::0::1::::<><>::res://Inventory/UI/Inventory.gd<>res://Inventory/UI/inventory_slot_values.gd
 ::res://Resources/::1705349627
 ::res://Resources/Images/::1705349695
 ::res://Resources/Images/actions/::1705349695
@@ -156,6 +166,7 @@ grass.png::CompressedTexture2D::7445923699467033864::1705349698::1705349698::1::
 ::res://Resources/Images/terrain/Assets/::1705349696
 ::res://Resources/Images/tilmapCC/::1706205200
 tilemap.png::CompressedTexture2D::3130945534539435813::1706205250::1706205250::1::::<><>::
+tilemap_inprogress.png::CompressedTexture2D::3983580089500742682::1707076778::1707076778::1::::<><>::
 ::res://Resources/Images/Weapons/::1705437574
 AXES.png::CompressedTexture2D::6846585397014838428::1705437576::1705437576::1::::<><>::
 DAGGERS.png::CompressedTexture2D::4413460268060635534::1705437576::1705437576::1::::<><>::
@@ -183,24 +194,13 @@ enemy.tscn::PackedScene::6180164649299095863::1706634922::0::1::::<><>::res://Sc
 ::res://Scripts/Overworld/::1706634617
 ::res://Scripts/Pathfinding/::1706634673
 astar.tscn::PackedScene::1218629864708422228::1706634806::0::1::::<><>::res://Scripts/Pathfinding/AStarManager.gd
-AStarManager.gd::GDScript::-1::1706231494::0::1::::AstarGrid<>Node2D<>::
-PathDraw.gd::GDScript::-1::1706279934::0::1::::<>Node2D<>::
+AStarManager.gd::GDScript::-1::1706642006::0::1::::AstarGrid<>Node2D<>::
+PathDraw.gd::GDScript::-1::1706642164::0::1::::<>Node2D<>::
 ::res://Scripts/Player/::1706634701
-player.gd::GDScript::-1::1706635050::0::1::::Player<>Node2D<>::
-player.tscn::PackedScene::7796196469435114984::1706641474::0::1::::<><>::uid://caxx7whbm05yt::::res://Resources/Images/AI/friendlynpc.png<>res://Scripts/Player/player.gd<>uid://d1rnc2lkjgj7i::::res://Scripts/UI/inventory_ui.tscn
+player.gd::GDScript::-1::1706641538::0::1::::Player<>Node2D<>::
+player.tscn::PackedScene::7796196469435114984::1706641506::0::1::::<><>::uid://caxx7whbm05yt::::res://Resources/Images/AI/friendlynpc.png<>res://Scripts/Player/player.gd<>uid://d1rnc2lkjgj7i::::res://Inventory/UI/inventory_ui.tscn
 ::res://Scripts/Quest/::1706634707
 Quest.gd::GDScript::-1::1706640596::0::1::::Quest<>Node<>::
 ::res://Scripts/Skills/::1706634714
 Skill.gd::GDScript::-1::1706636736::0::1::::Skill<>Node<>::
 ::res://Scripts/Systems/::1706634720
-::res://Scripts/UI/::1706634891
-Inventory.gd::GDScript::-1::1705485526::0::1::::Inventory<>Resource<>::
-inventoryUI.gd::GDScript::-1::1706635276::0::1::::<>Control<>::
-inventory_items.gd::GDScript::-1::1705458810::0::1::::inventoryItem<>Resource<>::
-inventory_slot.gd::GDScript::-1::1705483242::0::1::::<>Panel<>::
-inventory_slot.tscn::PackedScene::5613326751699613053::1706641474::0::1::::<><>::res://Scripts/UI/inventory_slot.gd<>uid://b7bnnahl216cw::::res://Inventory/Inventory UI/inventoryitem2.png
-inventory_slot_2.gd::GDScript::-1::1705483242::0::1::::<>Panel<>::
-inventory_slot_2.tscn::PackedScene::2480789538304564141::1706641474::0::1::::<><>::uid://cb00hpsvopqpy::::res://Inventory/Inventory UI/inventoryitem.png<>res://Scripts/UI/inventory_slot_2.gd
-inventory_slot_values.gd::GDScript::-1::1705478484::0::1::::InventorySlotValue<>Resource<>::
-inventory_ui.tscn::PackedScene::9020060735570866220::1706641474::0::1::::<><>::res://Scripts/UI/inventoryUI.gd<>uid://bffwcw42pi5wv::::res://Inventory/Inventory UI/inventory.png<>uid://cl8ew3h8fp34l::::res://Scripts/UI/inventory_slot.tscn<>uid://bblyig5amwefd::::res://Scripts/UI/inventory_slot_2.tscn
-PlayerInventory.tres::Resource/Inventory::6282933886061958106::1706641474::0::1::::<><>::res://Scripts/UI/Inventory.gd<>res://Scripts/UI/inventory_slot_values.gd
