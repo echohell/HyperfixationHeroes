@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
 ::res://::1705187461
 PointLight2D.gd::GDScript::-1::1707240854::0::1::::<>PointLight2D<>::
-test.tscn::PackedScene::1755133044910437909::1707244430::0::1::::<><>::uid://bkuwhlexee28x::::res://Resources/Images/tilmapCC/tilemap.png<>uid://dh8si7k14mkkl::::res://Resources/Images/terrain/crate.png<>uid://rmkwkewfpkxw::::res://Scripts/Pathfinding/astar.tscn<>uid://cubyn5vcobkbf::::res://Scripts/NPC ENEMY/enemy.tscn<>uid://clrurdcgauil0::::res://Resources/Images/tilmapCC/tilemap_inprogress_d.png<>uid://n27sk3irioqx::::res://Scripts/Items/bones.tscn<>uid://6x42spn354qj::::res://Scripts/Items/oddstone.tscn<>uid://bpfxgi10vxhfl::::res://Resources/Images/tilmapCC/tilemap_inprogress_n.png<>uid://bpw6qrndew8kw::::res://Resources/Images/tilmapCC/tilemap_inprogress_s.png<>res://Scripts/Player/player.gd<>uid://caxx7whbm05yt::::res://Resources/Images/AI/friendlynpc.png<>uid://d1rnc2lkjgj7i::::res://Inventory/UI/inventory_ui.tscn<>res://Scripts/Pathfinding/PathDraw.gd<>res://Scripts/Quest/Quest.gd<>uid://b0u8fa5vqi6pi::::res://Resources/Images/HUD-UI/white32s/white32.png
+test.tscn::PackedScene::1755133044910437909::1707248736::0::1::::<><>::uid://bkuwhlexee28x::::res://Resources/Images/tilmapCC/tilemap.png<>uid://dh8si7k14mkkl::::res://Resources/Images/terrain/crate.png<>uid://rmkwkewfpkxw::::res://Scripts/Pathfinding/astar.tscn<>uid://cubyn5vcobkbf::::res://Scripts/NPC ENEMY/enemy.tscn<>uid://4khsc2k62cm1::::res://Resources/Images/tilmapCC/tilemap_inprogrgvbsfdghubfsdg.png<>uid://n27sk3irioqx::::res://Scripts/Items/bones.tscn<>uid://6x42spn354qj::::res://Scripts/Items/oddstone.tscn<>res://Scripts/Player/player.gd<>uid://caxx7whbm05yt::::res://Resources/Images/AI/friendlynpc.png<>uid://d1rnc2lkjgj7i::::res://Inventory/UI/inventory_ui.tscn<>res://Scripts/Pathfinding/PathDraw.gd<>res://Scripts/Quest/Quest.gd<>uid://douuc56mwyyax::::res://Resources/Images/HUD-UI/white32s/white32radial.png
 ::res://addons/::1705350820
 ::res://addons/dialogue_manager/::1705350820
 constants.gd::GDScript::-1::1705350822::0::1::::<>Node<>::
@@ -109,7 +109,7 @@ inventory_slot_2.gd::GDScript::-1::1705483242::0::1::::<>Panel<>::
 inventory_slot_2.tscn::PackedScene::2480789538304564141::1706641506::0::1::::<><>::uid://cb00hpsvopqpy::::res://Inventory/Inventory UI/inventoryitem.png<>res://Inventory/UI/inventory_slot_2.gd
 inventory_slot_values.gd::GDScript::-1::1705478484::0::1::::InventorySlotValue<>Resource<>::
 inventory_ui.tscn::PackedScene::9020060735570866220::1706641506::0::1::::<><>::res://Inventory/UI/inventoryUI.gd<>uid://bffwcw42pi5wv::::res://Inventory/Inventory UI/inventory.png<>uid://cl8ew3h8fp34l::::res://Inventory/UI/inventory_slot.tscn<>uid://bblyig5amwefd::::res://Inventory/UI/inventory_slot_2.tscn
-PlayerInventory.tres::Resource/Inventory::6282933886061958106::1707244430::0::1::::<><>::res://Inventory/UI/Inventory.gd<>res://Inventory/UI/inventory_slot_values.gd
+PlayerInventory.tres::Resource/Inventory::6282933886061958106::1707245422::0::1::::<><>::res://Inventory/UI/Inventory.gd<>res://Inventory/UI/inventory_slot_values.gd
 ::res://Resources/::1705349627
 ::res://Resources/Images/::1705349695
 ::res://Resources/Images/actions/::1705349695
@@ -171,9 +171,9 @@ grass.png::CompressedTexture2D::7445923699467033864::1705349698::1705349698::1::
 ::res://Resources/Images/terrain/Assets/::1705349696
 ::res://Resources/Images/tilmapCC/::1706205200
 tilemap.png::CompressedTexture2D::3130945534539435813::1706205250::1706205250::1::::<><>::
-tilemap_inprogress.png::CompressedTexture2D::3983580089500742682::1707076778::1707076778::1::::<><>::
+tilemap_inprogress.png::CompressedTexture2D::3983580089500742682::1707249062::1707249062::1::::<><>::
 tilemap_inprogress_d.png::CompressedTexture2D::5581257928508354575::1707238162::1707238162::1::::<><>::
-tilemap_inprogress_n.png::CompressedTexture2D::3450982894147520633::1707243860::1707243860::1::::<><>::
+tilemap_inprogress_n.png::CompressedTexture2D::3450982894147520633::1707248296::1707248296::1::::<><>::
 tilemap_inprogress_o.png::CompressedTexture2D::4507391177331942940::1707238162::1707238162::1::::<><>::
 tilemap_inprogress_p.png::CompressedTexture2D::5283218887567132463::1707238162::1707238162::1::::<><>::
 tilemap_inprogress_s.png::CompressedTexture2D::3486581361453105278::1707238162::1707238162::1::::<><>::
