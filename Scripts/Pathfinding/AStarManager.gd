@@ -12,17 +12,15 @@ var current_point_path: PackedVector2Array
 func _ready():
 	astarGrid = AStarGrid2D.new()
 	astarGrid.region = tileMap.get_used_rect()
-	astarGrid.cell_size = Vector2(16,16)
+	astarGrid.cell_size = Vector2(32,32)
 	astarGrid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 	astarGrid.update()
-	
-	print(str(tileMap.get_used_rect()))
 	
 	for x in tileMap.get_used_rect().size.x:
 		for y in tileMap.get_used_rect().size.y:
 			var tilePos = Vector2i(x + tileMap.get_used_rect().position.x, y + tileMap.get_used_rect().position.y)
 			
-			var tileData = tileMap.get_cell_tile_data(0, tilePos + Vector2i(2,0))
+			var tileData = tileMap.get_cell_tile_data(0, tilePos + Vector2i(1,0))
 			
 			if tileData == null or tileData.get_custom_data("walkable") == false:
 				astarGrid.set_point_solid(tilePos)
@@ -39,7 +37,7 @@ func idPathing():
 			tileMap.local_to_map(get_global_mouse_position()))
 			
 		for i in current_point_path.size():
-			current_point_path[i] = current_point_path[i] + Vector2(48,16)
+			current_point_path[i] = current_point_path[i] + Vector2(56,24)
 
 func getPath():
 	return current_path

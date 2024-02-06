@@ -1,2 +1,5 @@
 res://test.tscn
 res://Inventory/UI/PlayerInventory.tres
+res://Scripts/Pathfinding/AStarManager.gd
+res://PointLight2D.gd
+res://Scripts/Player/player.gd

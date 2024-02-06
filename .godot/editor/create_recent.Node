@@ -1,3 +1,6 @@
+PointLight2D
+DirectionalLight2D
+WorldEnvironment
 TileMap
 Node2D
 Camera2D
@@ -9,7 +12,3 @@ Area2D
 Marker2D
 AnimationPlayer
 StaticBody2D
-Panel
-CenterContainer
-GridContainer
-NinePatchRect

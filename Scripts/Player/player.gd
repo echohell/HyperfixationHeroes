@@ -11,10 +11,10 @@ func _ready():
 	resize(1,1)                 #test for resizing individual child nodes
 
 func _physics_process(_delta):
-	var inputDir = Vector2(
-	Input.get_action_strength("right") - Input.get_action_strength("left"), 
-	Input.get_action_strength("down") - Input.get_action_strength("up")
-	)
+	# var inputDir = Vector2(
+	# Input.get_action_strength("right") - Input.get_action_strength("left"), 
+	# Input.get_action_strength("down") - Input.get_action_strength("up")
+	# )
 	
 	# velocity = inputDir * moveSpeed
 	# move_and_slide()
