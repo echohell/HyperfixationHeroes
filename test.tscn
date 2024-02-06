@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://d1rnc2lkjgj7i" path="res://Inventory/UI/inventory_ui.tscn" id="9_mpwby"]
 [ext_resource type="Script" path="res://Scripts/Pathfinding/PathDraw.gd" id="10_k1v2s"]
 [ext_resource type="Script" path="res://Scripts/Quest/Quest.gd" id="11_mw4qn"]
-[ext_resource type="Texture2D" uid="uid://b0u8fa5vqi6pi" path="res://Resources/Images/HUD-UI/white32.png" id="13_jh3og"]
+[ext_resource type="Texture2D" uid="uid://8tubwdce6iol" path="res://Resources/Images/HUD-UI/white32s/white32pointed.png" id="13_vpfyo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45gwf"]
 texture = ExtResource("1_72hns")
@@ -597,12 +597,12 @@ offset_bottom = -12.0
 metadata/_edit_use_anchors_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Player2"]
-position = Vector2(0, -9.53674e-07)
-scale = Vector2(1.1, 1.05)
+position = Vector2(76, -9.53674e-07)
+scale = Vector2(0.95, 1.05)
 color = Color(1, 1, 0.603922, 1)
 energy = 1.55
 blend_mode = 2
-texture = ExtResource("13_jh3og")
+texture = ExtResource("13_vpfyo")
 texture_scale = 5.0
 height = 30.0
 

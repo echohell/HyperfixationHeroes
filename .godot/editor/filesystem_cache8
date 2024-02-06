@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
 ::res://::1705187461
 PointLight2D.gd::GDScript::-1::1707240854::0::1::::<>PointLight2D<>::
-test.tscn::PackedScene::1755133044910437909::1707241712::0::1::::<><>::uid://bkuwhlexee28x::::res://Resources/Images/tilmapCC/tilemap.png<>uid://dh8si7k14mkkl::::res://Resources/Images/terrain/crate.png<>uid://rmkwkewfpkxw::::res://Scripts/Pathfinding/astar.tscn<>uid://cubyn5vcobkbf::::res://Scripts/NPC ENEMY/enemy.tscn<>uid://clrurdcgauil0::::res://Resources/Images/tilmapCC/tilemap_inprogress_d.png<>uid://n27sk3irioqx::::res://Scripts/Items/bones.tscn<>uid://6x42spn354qj::::res://Scripts/Items/oddstone.tscn<>uid://bpfxgi10vxhfl::::res://Resources/Images/tilmapCC/tilemap_inprogress_n.png<>res://Scripts/Player/player.gd<>uid://caxx7whbm05yt::::res://Resources/Images/AI/friendlynpc.png<>uid://d1rnc2lkjgj7i::::res://Inventory/UI/inventory_ui.tscn<>res://Scripts/Pathfinding/PathDraw.gd<>res://Scripts/Quest/Quest.gd<>uid://b0u8fa5vqi6pi::::res://Resources/Images/HUD-UI/white32.png
+test.tscn::PackedScene::1755133044910437909::1707244430::0::1::::<><>::uid://bkuwhlexee28x::::res://Resources/Images/tilmapCC/tilemap.png<>uid://dh8si7k14mkkl::::res://Resources/Images/terrain/crate.png<>uid://rmkwkewfpkxw::::res://Scripts/Pathfinding/astar.tscn<>uid://cubyn5vcobkbf::::res://Scripts/NPC ENEMY/enemy.tscn<>uid://clrurdcgauil0::::res://Resources/Images/tilmapCC/tilemap_inprogress_d.png<>uid://n27sk3irioqx::::res://Scripts/Items/bones.tscn<>uid://6x42spn354qj::::res://Scripts/Items/oddstone.tscn<>uid://bpfxgi10vxhfl::::res://Resources/Images/tilmapCC/tilemap_inprogress_n.png<>uid://bpw6qrndew8kw::::res://Resources/Images/tilmapCC/tilemap_inprogress_s.png<>res://Scripts/Player/player.gd<>uid://caxx7whbm05yt::::res://Resources/Images/AI/friendlynpc.png<>uid://d1rnc2lkjgj7i::::res://Inventory/UI/inventory_ui.tscn<>res://Scripts/Pathfinding/PathDraw.gd<>res://Scripts/Quest/Quest.gd<>uid://b0u8fa5vqi6pi::::res://Resources/Images/HUD-UI/white32s/white32.png
 ::res://addons/::1705350820
 ::res://addons/dialogue_manager/::1705350820
 constants.gd::GDScript::-1::1705350822::0::1::::<>Node<>::
@@ -109,7 +109,7 @@ inventory_slot_2.gd::GDScript::-1::1705483242::0::1::::<>Panel<>::
 inventory_slot_2.tscn::PackedScene::2480789538304564141::1706641506::0::1::::<><>::uid://cb00hpsvopqpy::::res://Inventory/Inventory UI/inventoryitem.png<>res://Inventory/UI/inventory_slot_2.gd
 inventory_slot_values.gd::GDScript::-1::1705478484::0::1::::InventorySlotValue<>Resource<>::
 inventory_ui.tscn::PackedScene::9020060735570866220::1706641506::0::1::::<><>::res://Inventory/UI/inventoryUI.gd<>uid://bffwcw42pi5wv::::res://Inventory/Inventory UI/inventory.png<>uid://cl8ew3h8fp34l::::res://Inventory/UI/inventory_slot.tscn<>uid://bblyig5amwefd::::res://Inventory/UI/inventory_slot_2.tscn
-PlayerInventory.tres::Resource/Inventory::6282933886061958106::1707240184::0::1::::<><>::res://Inventory/UI/Inventory.gd<>res://Inventory/UI/inventory_slot_values.gd
+PlayerInventory.tres::Resource/Inventory::6282933886061958106::1707244430::0::1::::<><>::res://Inventory/UI/Inventory.gd<>res://Inventory/UI/inventory_slot_values.gd
 ::res://Resources/::1705349627
 ::res://Resources/Images/::1705349695
 ::res://Resources/Images/actions/::1705349695
@@ -140,7 +140,6 @@ Exit.png::CompressedTexture2D::9175473578709722268::1705349698::1705349698::1:::
 healthbar.png::CompressedTexture2D::2738563441465653413::1705349698::1705349698::1::::<><>::
 indicator_sprite_sheet.png::CompressedTexture2D::6378376460040340322::1705349698::1705349698::1::::<><>::
 UIedge.png::CompressedTexture2D::8644058253588574847::1705349698::1705349698::1::::<><>::
-white32.png::CompressedTexture2D::4184441966775932514::1707241294::1707241332::1::::<><>::
 ::res://Resources/Images/HUD-UI/1by1scale/::1705349695
 fourtilereticle.png::CompressedTexture2D::6387384062159461558::1705349696::1705349700::1::::<><>::
 onetilereticle.png::CompressedTexture2D::718985911735914284::1705349696::1705349700::1::::<><>::
@@ -156,6 +155,10 @@ twotilereticle.png::CompressedTexture2D::1110557911010059210::1705349698::170534
 ::res://Resources/Images/HUD-UI/cone/::1705349696
 angledcone.png::CompressedTexture2D::9000660178086478820::1705349698::1705349700::1::::<><>::
 frontalcone.png::CompressedTexture2D::8896440395166366811::1705349698::1705349698::1::::<><>::
+::res://Resources/Images/HUD-UI/white32s/::1707244424
+white32.png::CompressedTexture2D::4184441966775932514::1707241294::1707244430::1::::<><>::
+white32pointed.png::CompressedTexture2D::2356672303276999359::1707244446::1707244446::1::::<><>::
+white32radial.png::CompressedTexture2D::8184412952701127895::1707244448::1707244448::1::::<><>::
 ::res://Resources/Images/HUD-UI/Xby1scale/::1705349696
 2by1reticle.png::CompressedTexture2D::4352913956165096186::1705349698::1705349698::1::::<><>::
 3by1reticle.png::CompressedTexture2D::1953961599336227027::1705349698::1705349698::1::::<><>::

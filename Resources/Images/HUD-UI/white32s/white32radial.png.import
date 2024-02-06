@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0u8fa5vqi6pi"
-path="res://.godot/imported/white32.png-1a98dd932223569a657f72339315914b.ctex"
+uid="uid://douuc56mwyyax"
+path="res://.godot/imported/white32radial.png-ca4f3efb7bc5193e49b684a5dd57d485.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/HUD-UI/white32.png"
-dest_files=["res://.godot/imported/white32.png-1a98dd932223569a657f72339315914b.ctex"]
+source_file="res://Resources/Images/HUD-UI/white32s/white32radial.png"
+dest_files=["res://.godot/imported/white32radial.png-ca4f3efb7bc5193e49b684a5dd57d485.ctex"]
 
 [params]
 
