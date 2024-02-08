@@ -1,0 +1,53 @@
+[gd_scene load_steps=12 format=3 uid="uid://dqmrm8m5ghjmu"]
+
+[ext_resource type="PackedScene" uid="uid://cptlb3bdg7jx1" path="res://Map.tscn" id="1_54y1x"]
+[ext_resource type="Script" path="res://GameBoard.gd" id="2_3h1gr"]
+[ext_resource type="Resource" uid="uid://lcpjxqnnhp2e" path="res://Grid.tres" id="3_3p8u6"]
+[ext_resource type="Texture2D" uid="uid://cr3hr15ek50mj" path="res://tileset_unit_overlay.png" id="4_sucmp"]
+[ext_resource type="Script" path="res://UnitOverlay.gd" id="5_624dh"]
+[ext_resource type="PackedScene" uid="uid://dcq8k5wno3cys" path="res://UnitPath.tscn" id="6_xapor"]
+[ext_resource type="PackedScene" uid="uid://cn0xh3ijhcd5j" path="res://Cursor.tscn" id="8_1olu6"]
+[ext_resource type="PackedScene" uid="uid://dqxmschiwv87g" path="res://Unit.tscn" id="9_54k3t"]
+[ext_resource type="Texture2D" uid="uid://clmvhi5gv0qi1" path="res://characterblocking.png" id="10_6a34f"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6fedc"]
+texture = ExtResource("4_sucmp")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2se0o"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_6fedc")
+
+[node name="Main Scene" type="Node2D"]
+
+[node name="Map" parent="." instance=ExtResource("1_54y1x")]
+
+[node name="GameBoard" type="Node2D" parent="."]
+script = ExtResource("2_3h1gr")
+grid = ExtResource("3_3p8u6")
+
+[node name="UnitOverlay" type="TileMap" parent="GameBoard"]
+modulate = Color(1, 1, 1, 0.560784)
+tile_set = SubResource("TileSet_2se0o")
+format = 2
+script = ExtResource("5_624dh")
+
+[node name="UnitPath" parent="GameBoard" instance=ExtResource("6_xapor")]
+
+[node name="Cursor" parent="GameBoard" instance=ExtResource("8_1olu6")]
+
+[node name="Path2D" parent="GameBoard" instance=ExtResource("9_54k3t")]
+position = Vector2(312, 442)
+move_range = 4
+move_speed = 250.0
+skin = ExtResource("10_6a34f")
+
+[node name="Treasure" parent="GameBoard" instance=ExtResource("9_54k3t")]
+position = Vector2(428, 188)
+move_range = 10
+move_speed = 250.0
+skin = ExtResource("10_6a34f")
+
+[connection signal="accept_pressed" from="GameBoard/Cursor" to="GameBoard" method="_on_cursor_accept_pressed"]
+[connection signal="moved" from="GameBoard/Cursor" to="GameBoard" method="_on_cursor_moved"]

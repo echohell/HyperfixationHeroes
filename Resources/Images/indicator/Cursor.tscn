@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn0xh3ijhcd5j"]
+
+[ext_resource type="Script" path="res://Cursor.gd" id="1_w53xq"]
+[ext_resource type="Resource" uid="uid://lcpjxqnnhp2e" path="res://Grid.tres" id="2_7quf0"]
+[ext_resource type="Texture2D" uid="uid://rhfk2pk1jg2" path="res://indicator_sprite_sheet.png" id="2_h508w"]
+
+[sub_resource type="Animation" id="Animation_mpv8v"]
+resource_name = "Cursor"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.2, -0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2b1lm"]
+_data = {
+"Cursor": SubResource("Animation_mpv8v")
+}
+
+[node name="Cursor" type="Node2D"]
+script = ExtResource("1_w53xq")
+grid = ExtResource("2_7quf0")
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("2_h508w")
+hframes = 8
+frame = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2b1lm")
+}

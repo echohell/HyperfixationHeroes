@@ -1,2 +1,11 @@
-res://test.tscn
+res://MainScene.tscn
 res://Inventory/UI/PlayerInventory.tres
+res://unit_path_tileset.tres
+res://Cursor.gd
+res://Unit.tscn
+res://Astar.gd
+res://GameBoard.gd
+res://OnfieldUnit.gd
+res://Grid.gd
+res://UnitOverlay.gd
+res://UnitPath.gd

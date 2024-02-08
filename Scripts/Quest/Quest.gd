@@ -27,7 +27,7 @@ func checkObjective():
 	for i in range(objectives.size()):
 		if (objectives[i] != true):
 			pass;
-	print("Completeed Checking Objectives")
+	print("Completed Checking Objectives")
 	isComplete = true
 
 func assignQuest():

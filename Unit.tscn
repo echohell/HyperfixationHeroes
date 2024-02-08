@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3y5cl40vr61w"]
+
+[ext_resource type="Script" path="res://OnfieldUnit.gd" id="1_ik87l"]
+[ext_resource type="Resource" path="res://Grid.tres" id="2_0r15v"]
+[ext_resource type="Texture2D" uid="uid://c2pqk2ecg7obs" path="res://shadow.png" id="3_7y0li"]
+[ext_resource type="PackedScene" uid="uid://d1rnc2lkjgj7i" path="res://Inventory/UI/inventory_ui.tscn" id="4_c5y15"]
+
+[sub_resource type="Animation" id="Animation_8csmy"]
+resource_name = "idle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D/Image:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ec2x8"]
+resource_name = "selected"
+length = 0.75
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D/Image:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 10.1965),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_stlhn"]
+_data = {
+"idle": SubResource("Animation_8csmy"),
+"selected": SubResource("Animation_ec2x8")
+}
+
+[node name="Path2D" type="Path2D"]
+script = ExtResource("1_ik87l")
+grid = ExtResource("2_0r15v")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+loop = false
+
+[node name="Shadow" type="Sprite2D" parent="PathFollow2D"]
+modulate = Color(0.109804, 0.109804, 0.109804, 1)
+position = Vector2(0, 1)
+texture = ExtResource("3_7y0li")
+
+[node name="Image" type="Sprite2D" parent="PathFollow2D"]
+offset = Vector2(0, -20)
+
+[node name="inventoryUI" parent="PathFollow2D/Image" instance=ExtResource("4_c5y15")]
+visible = false
+offset_left = -75.0
+offset_top = -166.0
+offset_right = 76.0
+offset_bottom = -50.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_stlhn")
+}
