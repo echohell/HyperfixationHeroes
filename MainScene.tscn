@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://dsvocy7vl4hge"]
 
-[ext_resource type="PackedScene" path="res://Map.tscn" id="1_54y1x"]
+[ext_resource type="PackedScene" uid="uid://cptlb3bdg7jx1" path="res://Map.tscn" id="1_54y1x"]
 [ext_resource type="Script" path="res://GameBoard.gd" id="2_3h1gr"]
-[ext_resource type="Resource" path="res://Grid.tres" id="3_3p8u6"]
+[ext_resource type="Resource" uid="uid://lcpjxqnnhp2e" path="res://Grid.tres" id="3_3p8u6"]
 [ext_resource type="Texture2D" uid="uid://cr3hr15ek50mj" path="res://tileset_unit_overlay.png" id="4_sucmp"]
 [ext_resource type="Script" path="res://UnitOverlay.gd" id="5_624dh"]
-[ext_resource type="PackedScene" path="res://UnitPath.tscn" id="6_xapor"]
-[ext_resource type="PackedScene" path="res://Cursor.tscn" id="8_1olu6"]
+[ext_resource type="PackedScene" uid="uid://dcq8k5wno3cys" path="res://UnitPath.tscn" id="6_xapor"]
+[ext_resource type="PackedScene" uid="uid://cn0xh3ijhcd5j" path="res://Cursor.tscn" id="8_1olu6"]
 [ext_resource type="Texture2D" uid="uid://crp52x171d51g" path="res://Resources/Images/testimages/characterblocking.png" id="9_3bban"]
 [ext_resource type="PackedScene" uid="uid://b3y5cl40vr61w" path="res://Unit.tscn" id="9_54k3t"]
 
