@@ -1,0 +1,265 @@
+[gd_scene load_steps=6 format=3 uid="uid://xwkgnocycl2d"]
+
+[ext_resource type="Script" path="res://main_interface.gd" id="1_rqb28"]
+[ext_resource type="Texture2D" uid="uid://bi33afrca5a0" path="res://Resources/Images/actions/fireball.png" id="2_amcv3"]
+[ext_resource type="Script" path="res://skill_interface.gd" id="2_xpyh6"]
+[ext_resource type="Script" path="res://stats_interface.gd" id="4_rcwik"]
+[ext_resource type="Texture2D" uid="uid://crp52x171d51g" path="res://Resources/Images/testimages/characterblocking.png" id="4_yyjjp"]
+
+[node name="MainInterface" type="Control"]
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rqb28")
+
+[node name="Skills" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1186.0
+offset_top = 666.0
+offset_right = 1245.0
+offset_bottom = 697.0
+text = "SKILLS"
+
+[node name="SkillPane" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -439.0
+offset_top = -289.0
+offset_right = 439.0
+offset_bottom = 289.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_xpyh6")
+
+[node name="SkillWindow" type="HBoxContainer" parent="SkillPane"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -434.5
+offset_top = -285.0
+offset_right = 434.5
+offset_bottom = 285.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="Panel1" type="ColorRect" parent="SkillPane/SkillWindow"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 0.0196078, 1, 0)
+
+[node name="Panel2" type="ColorRect" parent="SkillPane/SkillWindow"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.0588235, 1, 1, 0)
+
+[node name="TextureRect" type="TextureRect" parent="SkillPane/SkillWindow/Panel2"]
+layout_mode = 0
+offset_left = 52.5
+offset_top = 7.0
+offset_right = 248.5
+offset_bottom = 199.0
+texture = ExtResource("2_amcv3")
+expand_mode = 3
+
+[node name="Description" type="Label" parent="SkillPane/SkillWindow/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.5
+offset_top = -76.5
+offset_right = 141.5
+offset_bottom = 76.5
+grow_horizontal = 2
+grow_vertical = 2
+autowrap_mode = 2
+
+[node name="SkillList" type="VBoxContainer" parent="SkillPane/SkillWindow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Fire 1" type="Button" parent="SkillPane/SkillWindow/SkillList"]
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Level 1 Fire Spell"
+text = "Fire 1"
+
+[node name="Fire 2" type="Button" parent="SkillPane/SkillWindow/SkillList"]
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Level 2 Fire Spell"
+text = "Fire 2"
+
+[node name="Fire 3" type="Button" parent="SkillPane/SkillWindow/SkillList"]
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Level 3 Fire Spell"
+text = "Fire 3"
+
+[node name="Ice 1" type="Button" parent="SkillPane/SkillWindow/SkillList"]
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Level 1 Ice Spell"
+text = "Ice 1"
+
+[node name="Ice 2" type="Button" parent="SkillPane/SkillWindow/SkillList"]
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Level 2 Ice Spell"
+text = "Ice 2"
+
+[node name="Ice 3" type="Button" parent="SkillPane/SkillWindow/SkillList"]
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Level 3 Ice Spell"
+text = "Ice 3"
+
+[node name="Thunder 1" type="Button" parent="SkillPane/SkillWindow/SkillList"]
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Level 1 Bolt Spell"
+text = "Thunder 1"
+
+[node name="Thunder 2" type="Button" parent="SkillPane/SkillWindow/SkillList"]
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Level 2 Bolt Spell"
+text = "Thunder 2"
+
+[node name="Thunder 3" type="Button" parent="SkillPane/SkillWindow/SkillList"]
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Level 3 Bolt Spell"
+text = "Thunder 3"
+
+[node name="Stats" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1126.0
+offset_top = 666.0
+offset_right = 1173.0
+offset_bottom = 697.0
+text = "STATS"
+
+[node name="StatsPane" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -439.0
+offset_top = -289.0
+offset_right = 439.0
+offset_bottom = 289.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_rcwik")
+
+[node name="StatsWindow" type="HBoxContainer" parent="StatsPane"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -434.5
+offset_top = -285.0
+offset_right = 434.5
+offset_bottom = 285.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="Panel1" type="ColorRect" parent="StatsPane/StatsWindow"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 0.0196078, 1, 0)
+
+[node name="CoreStatLabels" type="VBoxContainer" parent="StatsPane/StatsWindow/Panel1"]
+layout_mode = 0
+offset_left = 36.5
+offset_top = 226.0
+offset_right = 76.5
+offset_bottom = 266.0
+
+[node name="STR" type="Label" parent="StatsPane/StatsWindow/Panel1/CoreStatLabels"]
+layout_mode = 2
+tooltip_text = "Strength increases your melee damage, and parry rate"
+mouse_filter = 1
+text = "STR:"
+
+[node name="INT" type="Label" parent="StatsPane/StatsWindow/Panel1/CoreStatLabels"]
+layout_mode = 2
+tooltip_text = "Intellect increases your magic damage, as well as your maximum mana"
+mouse_filter = 1
+text = "INT:"
+
+[node name="DEX" type="Label" parent="StatsPane/StatsWindow/Panel1/CoreStatLabels"]
+layout_mode = 2
+tooltip_text = "Dexterity increases critical strike chance and lowers chance to miss"
+mouse_filter = 1
+text = "DEX: "
+
+[node name="STA" type="Label" parent="StatsPane/StatsWindow/Panel1/CoreStatLabels"]
+layout_mode = 2
+tooltip_text = "Stamina determines your maximum hp"
+mouse_filter = 1
+text = "STA:"
+
+[node name="LUK" type="Label" parent="StatsPane/StatsWindow/Panel1/CoreStatLabels"]
+layout_mode = 2
+tooltip_text = "Impacts various RNG (including a small increase to Crit Chance)"
+mouse_filter = 1
+text = "LUK:"
+
+[node name="TextureRect" type="TextureRect" parent="StatsPane/StatsWindow/Panel1"]
+layout_mode = 0
+offset_left = 71.5
+offset_top = 13.0
+offset_right = 267.5
+offset_bottom = 205.0
+texture = ExtResource("4_yyjjp")
+expand_mode = 3
+
+[node name="Panel2" type="ColorRect" parent="StatsPane/StatsWindow"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.0588235, 1, 1, 0)
+
+[node name="Panel3" type="VBoxContainer" parent="StatsPane/StatsWindow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="Skills" to="." method="_on_skills_pressed"]
+[connection signal="pressed" from="Skills" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="SkillPane/SkillWindow/SkillList/Fire 1" to="." method="_on_fire_1_pressed"]
+[connection signal="pressed" from="SkillPane/SkillWindow/SkillList/Fire 1" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="SkillPane/SkillWindow/SkillList/Fire 1" to="." method="_on_f_1_pressed"]
+[connection signal="pressed" from="SkillPane/SkillWindow/SkillList/Fire 1" to="SkillPane" method="_on_fire_1_pressed"]
+[connection signal="pressed" from="SkillPane/SkillWindow/SkillList/Fire 2" to="." method="_on_fire_2_pressed"]
+[connection signal="pressed" from="SkillPane/SkillWindow/SkillList/Fire 2" to="." method="_on_f_2_pressed"]
+[connection signal="pressed" from="SkillPane/SkillWindow/SkillList/Fire 2" to="SkillPane" method="_on_fire_2_pressed"]
+[connection signal="pressed" from="SkillPane/SkillWindow/SkillList/Fire 3" to="SkillPane" method="_on_fire_3_pressed"]
+[connection signal="pressed" from="Stats" to="." method="_on_stats_pressed"]

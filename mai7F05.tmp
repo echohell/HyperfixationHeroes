@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://xwkgnocycl2d"]
+
+[ext_resource type="Script" path="res://main_interface.gd" id="1_rqb28"]
+
+[node name="MainInterface" type="Control"]
+top_level = true
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rqb28")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 489.0
+offset_bottom = 368.0
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 0.0196078, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.0588235, 1, 1, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Fire 1"
+
+[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Fire 2"
+
+[node name="Button3" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Fire 3"
+
+[node name="Skills" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1187.0
+offset_top = 664.0
+offset_right = 1246.0
+offset_bottom = 695.0
+text = "SKILLS"
+
+[connection signal="pressed" from="Skills" to="." method="_on_skills_pressed"]
+[connection signal="pressed" from="Skills" to="." method="_on_button_pressed"]

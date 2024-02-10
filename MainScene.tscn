@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dsvocy7vl4hge"]
+[gd_scene load_steps=13 format=3 uid="uid://dsvocy7vl4hge"]
 
 [ext_resource type="PackedScene" uid="uid://cptlb3bdg7jx1" path="res://Map.tscn" id="1_54y1x"]
 [ext_resource type="Script" path="res://GameBoard.gd" id="2_3h1gr"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cn0xh3ijhcd5j" path="res://Cursor.tscn" id="8_1olu6"]
 [ext_resource type="Texture2D" uid="uid://crp52x171d51g" path="res://Resources/Images/testimages/characterblocking.png" id="9_3bban"]
 [ext_resource type="PackedScene" uid="uid://b3y5cl40vr61w" path="res://Unit.tscn" id="9_54k3t"]
+[ext_resource type="PackedScene" uid="uid://xwkgnocycl2d" path="res://main_interface.tscn" id="10_vhcy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6fedc"]
 texture = ExtResource("4_sucmp")
@@ -48,6 +49,13 @@ position = Vector2(428, 188)
 move_range = 10
 move_speed = 250.0
 skin = ExtResource("9_3bban")
+
+[node name="MainInterface" parent="." instance=ExtResource("10_vhcy4")]
+anchors_preset = 15
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 3.0
+offset_bottom = -3.0
 
 [connection signal="accept_pressed" from="GameBoard/Cursor" to="GameBoard" method="_on_cursor_accept_pressed"]
 [connection signal="moved" from="GameBoard/Cursor" to="GameBoard" method="_on_cursor_moved"]
