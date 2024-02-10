@@ -15,4 +15,7 @@ func _on_fire_3_pressed():
 	update_description(description)
 
 func update_description(description):
-	$SkillWindow/ColorRect2/Description.text = str(description)
+	$SkillWindow/Panel2/Description.text = str(description)
+
+func _on_str_minus_pressed():
+	pass # Replace with function body.

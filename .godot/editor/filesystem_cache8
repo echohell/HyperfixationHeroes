@@ -1,5 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1707550539
+::res://::1707602171
+AddItem.gd::GDScript::-1::1707596409::0::1::::<>Button<>::
 arrows_tileset.png::CompressedTexture2D::6016205820823637071::1707434678::1707434678::1::::<><>::
 Astar.gd::GDScript::-1::1707434678::0::1::::astar<>Resource<>::
 Cursor.gd::GDScript::-1::1707434678::0::1::::Cursor<>Node2D<>::
@@ -8,22 +9,22 @@ GameBoard.gd::GDScript::-1::1707434678::0::1::::GameBoard<>Node2D<>::
 Grid.gd::GDScript::-1::1707434678::0::1::::Grid<>Resource<>::
 Grid.tres::Resource/Resource::777134095925367038::1707434678::0::1::::<><>::res://Grid.gd
 indicator_sprite_sheet.png::CompressedTexture2D::35528937377053851::1707434678::1707434678::1::::<><>::
-MainScene.tscn::PackedScene::8466868089849818148::1707550431::0::1::::<><>::uid://cptlb3bdg7jx1::::res://Map.tscn<>res://GameBoard.gd<>uid://lcpjxqnnhp2e::::res://Grid.tres<>uid://cr3hr15ek50mj::::res://tileset_unit_overlay.png<>res://UnitOverlay.gd<>uid://dcq8k5wno3cys::::res://UnitPath.tscn<>uid://cn0xh3ijhcd5j::::res://Cursor.tscn<>uid://crp52x171d51g::::res://Resources/Images/testimages/characterblocking.png<>uid://b3y5cl40vr61w::::res://Unit.tscn<>uid://xwkgnocycl2d::::res://main_interface.tscn
-main_interface.gd::GDScript::-1::1707550430::0::1::::UIElement<>Control<>::
-main_interface.tscn::PackedScene::1660378303509002773::1707550528::0::1::::<><>::res://main_interface.gd<>uid://bi33afrca5a0::::res://Resources/Images/actions/fireball.png<>res://skill_interface.gd<>res://stats_interface.gd<>uid://crp52x171d51g::::res://Resources/Images/testimages/characterblocking.png
+MainScene.tscn::PackedScene::8466868089849818148::1707602138::0::1::::<><>::uid://cptlb3bdg7jx1::::res://Map.tscn<>res://GameBoard.gd<>uid://lcpjxqnnhp2e::::res://Grid.tres<>uid://cr3hr15ek50mj::::res://tileset_unit_overlay.png<>res://UnitOverlay.gd<>uid://dcq8k5wno3cys::::res://UnitPath.tscn<>uid://cn0xh3ijhcd5j::::res://Cursor.tscn<>uid://crp52x171d51g::::res://Resources/Images/testimages/characterblocking.png<>uid://b3y5cl40vr61w::::res://Unit.tscn<>uid://xwkgnocycl2d::::res://main_interface.tscn
+main_interface.gd::GDScript::-1::1707601708::0::1::::UIElement<>Control<>::
+main_interface.tscn::PackedScene::1660378303509002773::1707602146::0::1::::<><>::res://main_interface.gd<>uid://bi33afrca5a0::::res://Resources/Images/actions/fireball.png<>res://skill_interface.gd<>res://stats_interface.gd<>uid://crp52x171d51g::::res://Resources/Images/testimages/characterblocking.png
 Map.tscn::PackedScene::5865568344342361292::1707434678::0::1::::<><>::uid://b131dsvlk0kyv::::res://tilemap_inprogress.png
 OnfieldUnit.gd::GDScript::-1::1707546268::0::1::::Unit<>Path2D<>::
 PointLight2D.gd::GDScript::-1::1707253447::0::1::::<>PointLight2D<>::
 shadow.png::CompressedTexture2D::6699896566157119884::1707434678::1707434678::1::::<><>::
-skill_interface.gd::GDScript::-1::1707549521::0::1::::<>Control<>::
+skill_interface.gd::GDScript::-1::1707599175::0::1::::<>Control<>::
 stats_interface.gd::GDScript::-1::1707550514::0::1::::<>Control<>::
 tilemap_inprogress.png::CompressedTexture2D::4270718172964602869::1707434678::1707434678::1::::<><>::
 tileset_unit_overlay.png::CompressedTexture2D::6024311075939724565::1707434678::1707434678::1::::<><>::
-Unit.tscn::PackedScene::4403079076747079358::1707434678::0::1::::<><>::res://OnfieldUnit.gd<>res://Grid.tres<>uid://c2pqk2ecg7obs::::res://shadow.png<>uid://d1rnc2lkjgj7i::::res://Inventory/UI/inventory_ui.tscn
+Unit.tscn::PackedScene::4403079076747079358::1707596468::0::1::::<><>::res://OnfieldUnit.gd<>uid://lcpjxqnnhp2e::::res://Grid.tres<>uid://c2pqk2ecg7obs::::res://shadow.png<>uid://d1rnc2lkjgj7i::::res://Inventory/UI/inventory_ui.tscn
 UnitOverlay.gd::GDScript::-1::1707434678::0::1::::UnitOverlay<>TileMap<>::
 UnitPath.gd::GDScript::-1::1707434678::0::1::::UnitPath<>TileMap<>::
 UnitPath.tscn::PackedScene::7334692911417340970::1707434678::0::1::::<><>::uid://cthc7y5bmvnhm::::res://unit_path_tileset.tres<>res://UnitPath.gd<>uid://lcpjxqnnhp2e::::res://Grid.tres
-unit_path_tileset.tres::TileSet::5799883781656476369::1707546320::0::1::::<><>::uid://crykbbyd2vj40::::res://arrows_tileset.png
+unit_path_tileset.tres::TileSet::5799883781656476369::1707596468::0::1::::<><>::uid://crykbbyd2vj40::::res://arrows_tileset.png
 ::res://addons/::1705421474
 ::res://addons/dialogue_manager/::1705421474
 constants.gd::GDScript::-1::1705421474::0::1::::<>Node<>::
@@ -121,7 +122,7 @@ scrap.tres::Resource/Resource::1013109598408989716::1706657018::0::1::::<><>::re
 scryingorb.tres::Resource/Resource::5040150023703200260::1706657018::0::1::::<><>::res://Inventory/UI/inventory_items.gd<>uid://dmavhhayy0imy::::res://Inventory/Inventory Item PNGs/scryingorb.png
 woodenbarrel.tres::Resource/Resource::2464875861186563049::1706657018::0::1::::<><>::res://Inventory/UI/inventory_items.gd<>uid://e6t5060kvmtg::::res://Inventory/Inventory Item PNGs/woodenbarrel.png
 woodencrate.tres::Resource/Resource::3498609469335787246::1706657018::0::1::::<><>::res://Inventory/UI/inventory_items.gd<>uid://bq4yb53x1e4vs::::res://Inventory/Inventory Item PNGs/woodencrate.png
-::res://Inventory/UI/::1707546320
+::res://Inventory/UI/::1707596468
 Inventory.gd::GDScript::-1::1706657018::0::1::::Inventory<>Resource<>::
 inventoryUI.gd::GDScript::-1::1707359342::0::1::::<>Control<>::
 inventory_items.gd::GDScript::-1::1706657018::0::1::::inventoryItem<>Resource<>::
@@ -131,7 +132,7 @@ inventory_slot_2.gd::GDScript::-1::1706657018::0::1::::<>Panel<>::
 inventory_slot_2.tscn::PackedScene::2480789538304564141::1706657018::0::1::::<><>::uid://cb00hpsvopqpy::::res://Inventory/Inventory UI/inventoryitem.png<>res://Inventory/UI/inventory_slot_2.gd
 inventory_slot_values.gd::GDScript::-1::1706657018::0::1::::InventorySlotValue<>Resource<>::
 inventory_ui.tscn::PackedScene::9020060735570866220::1707359342::0::1::::<><>::res://Inventory/UI/inventoryUI.gd<>uid://bffwcw42pi5wv::::res://Inventory/Inventory UI/inventory.png<>uid://cl8ew3h8fp34l::::res://Inventory/UI/inventory_slot.tscn<>uid://bblyig5amwefd::::res://Inventory/UI/inventory_slot_2.tscn
-PlayerInventory.tres::Resource/Inventory::6282933886061958106::1707546320::0::1::::<><>::res://Inventory/UI/Inventory.gd<>res://Inventory/UI/inventory_slot_values.gd
+PlayerInventory.tres::Resource/Inventory::6282933886061958106::1707596468::0::1::::<><>::res://Inventory/UI/Inventory.gd<>res://Inventory/UI/inventory_slot_values.gd
 ::res://Resources/::1705421474
 ::res://Resources/Images/::1707508472
 ::res://Resources/Images/actions/::1707508473

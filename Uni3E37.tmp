@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3y5cl40vr61w"]
+[gd_scene load_steps=9 format=3 uid="uid://b3y5cl40vr61w"]
 
 [ext_resource type="Script" path="res://OnfieldUnit.gd" id="1_ik87l"]
 [ext_resource type="Resource" uid="uid://lcpjxqnnhp2e" path="res://Grid.tres" id="2_0r15v"]
 [ext_resource type="Texture2D" uid="uid://c2pqk2ecg7obs" path="res://shadow.png" id="3_7y0li"]
 [ext_resource type="PackedScene" uid="uid://d1rnc2lkjgj7i" path="res://Inventory/UI/inventory_ui.tscn" id="4_c5y15"]
+[ext_resource type="Script" path="res://AddItem.gd" id="5_jvy0y"]
 
 [sub_resource type="Animation" id="Animation_8csmy"]
 resource_name = "idle"
@@ -71,3 +72,13 @@ offset_bottom = -50.0
 libraries = {
 "": SubResource("AnimationLibrary_stlhn")
 }
+
+[node name="AddItem" type="Button" parent="."]
+offset_left = 78.0
+offset_top = 626.0
+offset_right = 157.0
+offset_bottom = 657.0
+text = "Add Item"
+script = ExtResource("5_jvy0y")
+
+[connection signal="pressed" from="AddItem" to="AddItem" method="_on_pressed"]

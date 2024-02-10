@@ -51,11 +51,19 @@ move_speed = 250.0
 skin = ExtResource("9_3bban")
 
 [node name="MainInterface" parent="." instance=ExtResource("10_vhcy4")]
-anchors_preset = 15
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 3.0
 offset_bottom = -3.0
 
+[node name="MenuButton" type="Button" parent="."]
+offset_left = 1199.0
+offset_top = 9.0
+offset_right = 1252.0
+offset_bottom = 40.0
+text = "Menu"
+
 [connection signal="accept_pressed" from="GameBoard/Cursor" to="GameBoard" method="_on_cursor_accept_pressed"]
 [connection signal="moved" from="GameBoard/Cursor" to="GameBoard" method="_on_cursor_moved"]
+[connection signal="pressed" from="MenuButton" to="MainInterface" method="_on_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="MainInterface" method="_on_menu_button_pressed"]
