@@ -1,12 +1,2 @@
-res://Unit.tscn
-res://unit_path_tileset.tres
-res://Inventory/UI/PlayerInventory.tres
 res://MainScene.tscn
-res://EnemyGroup.gd
-res://OnfieldUnit.gd
-res://Cursor.tscn
-res://GameBoard.gd
-res://PlayerGroup.tscn
-res://Inventory/UI/inventory_slot_2.tscn
-res://Cursor.gd
-res://skill_interface.gd
+res://unit_path_tileset.tres

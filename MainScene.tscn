@@ -266,28 +266,28 @@ script = ExtResource("19_l1q22")
 
 [node name="Main" parent="GameBoard/EnemyGroup" instance=ExtResource("9_54k3t")]
 z_index = -1
-position = Vector2(607, 386)
+position = Vector2(592, 400)
 move_range = 4
 move_speed = 250.0
 skin = ExtResource("9_3bban")
 
 [node name="Main2" parent="GameBoard/EnemyGroup" instance=ExtResource("9_54k3t")]
 z_index = -1
-position = Vector2(696, 344)
+position = Vector2(688, 336)
 move_range = 4
 move_speed = 250.0
 skin = ExtResource("9_3bban")
 
 [node name="Main3" parent="GameBoard/EnemyGroup" instance=ExtResource("9_54k3t")]
 z_index = -1
-position = Vector2(743, 433)
+position = Vector2(752, 432)
 move_range = 4
 move_speed = 250.0
 skin = ExtResource("9_3bban")
 
 [node name="Main4" parent="GameBoard/EnemyGroup" instance=ExtResource("9_54k3t")]
 z_index = -1
-position = Vector2(823, 375)
+position = Vector2(816, 368)
 move_range = 4
 move_speed = 250.0
 skin = ExtResource("9_3bban")
@@ -301,10 +301,12 @@ script = ExtResource("5_624dh")
 [node name="UnitPath" parent="GameBoard" instance=ExtResource("6_xapor")]
 
 [node name="Cursor" parent="GameBoard" instance=ExtResource("8_1olu6")]
+position = Vector2(16, 16)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="GameBoard/Cursor"]
 
 [node name="Panel" type="Panel" parent="GameBoard/Cursor/CanvasLayer"]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 
