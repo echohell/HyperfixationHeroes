@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3y5cl40vr61w"]
+[gd_scene load_steps=9 format=3 uid="uid://b3y5cl40vr61w"]
 
 [ext_resource type="Script" path="res://OnfieldUnit.gd" id="1_ik87l"]
 [ext_resource type="Resource" uid="uid://lcpjxqnnhp2e" path="res://Grid.tres" id="2_0r15v"]
 [ext_resource type="Texture2D" uid="uid://c2pqk2ecg7obs" path="res://shadow.png" id="3_7y0li"]
 [ext_resource type="PackedScene" uid="uid://d1rnc2lkjgj7i" path="res://Inventory/UI/inventory_ui.tscn" id="4_c5y15"]
+[ext_resource type="Texture2D" uid="uid://8tubwdce6iol" path="res://Resources/Images/HUD-UI/white32s/white32pointed.png" id="5_sut1h"]
 
 [sub_resource type="Animation" id="Animation_8csmy"]
 resource_name = "idle"
@@ -66,6 +67,11 @@ offset_left = -75.0
 offset_top = -166.0
 offset_right = 76.0
 offset_bottom = -50.0
+
+[node name="PointLight2D" type="PointLight2D" parent="PathFollow2D"]
+position = Vector2(59, 9.53674e-07)
+scale = Vector2(3.6875, 2.1875)
+texture = ExtResource("5_sut1h")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

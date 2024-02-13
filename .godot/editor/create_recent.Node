@@ -1,3 +1,5 @@
+PointLight2D
+TileMap
 Button
 TextureRect
 Label
@@ -10,5 +12,3 @@ BoxContainer
 Container
 PanelContainer
 AspectRatioContainer
-ColorRect
-Camera2D

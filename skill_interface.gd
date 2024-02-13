@@ -1,6 +1,6 @@
 extends Control
 
-var description: String = "BRUH"
+var description
 
 func _on_fire_1_pressed():
 	description = str("Burn the target with a small ball of fire")

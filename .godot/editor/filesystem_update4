@@ -1,3 +1,4 @@
-res://main_interface.tscn
+res://Unit.tscn
 res://unit_path_tileset.tres
 res://Inventory/UI/PlayerInventory.tres
+res://MainScene.tscn
