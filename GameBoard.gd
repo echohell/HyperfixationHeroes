@@ -10,9 +10,10 @@ var _units := {}                                                  # Map coords c
 var _active_unit: Unit
 var _walkable_cells := []
 
+@onready var _playergroup: Node2D = $PlayerGroup
 @onready var _unit_overlay: UnitOverlay = $UnitOverlay
 @onready var _unit_path: UnitPath = $UnitPath
-
+@onready var _action_panel: Panel = $Cursor/CanvasLayer/Panel
 
 func _ready() -> void:
 	_reinitialize()
@@ -42,7 +43,7 @@ func get_walkable_cells(unit: Unit) -> Array:              # returns array of ce
 func _reinitialize() -> void:                                 # clears and refills dictionary units
 	_units.clear()
 
-	for child in get_children():
+	for child in _playergroup.get_children():
 		var unit := child as Unit
 		if not unit:
 			continue
@@ -95,6 +96,7 @@ func _select_unit(cell: Vector2) -> void:               # Selects unit in cell i
 	if not _units.has(cell):
 		return
 
+	_turn_on_canvas(cell)
 	_active_unit = _units[cell]           # Sets active unit and draws its walk cells and move path
 	_active_unit.is_selected = true
 	_walkable_cells = get_walkable_cells(_active_unit)
@@ -117,9 +119,23 @@ func _on_cursor_accept_pressed(cell: Vector2) -> void:         # IMPORTANT: NODE
 	if not _active_unit:
 		_select_unit(cell)
 	elif _active_unit.is_selected:
+		_turn_off_canvas()
 		_move_active_unit(cell)
 
 
 func _on_cursor_moved(new_cell: Vector2) -> void:
 	if _active_unit and _active_unit.is_selected:
 		_unit_path.draw(_active_unit.cell, new_cell)
+
+
+func _turn_on_canvas(cell: Vector2):
+	_action_panel.visible = true
+	_action_panel.set_position(cell * 32)
+	_action_panel.position.x += 10
+
+func _turn_off_canvas():
+	_action_panel.visible = false
+
+
+func _on_move_pressed():
+	_turn_off_canvas()

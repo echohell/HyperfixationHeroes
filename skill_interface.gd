@@ -14,7 +14,7 @@ func _on_fire_3_pressed():
 	description = str("Trogdor Mode Engaged")
 	update_description(description)
 
-func update_description(description):
+func update_description(_description):
 	$SkillWindow/Panel2/Description.text = str(description)
 
 func _on_str_minus_pressed():

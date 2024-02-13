@@ -4,9 +4,23 @@ extends Path2D
 
 signal walk_finished                                                      # emits when done walking
 
+@onready var _sprite: Sprite2D = $PathFollow2D/Image
+@onready var _anim_player: AnimationPlayer = $AnimationPlayer
+@onready var _path_follow: PathFollow2D = $PathFollow2D
+@onready var _progress_bar: ProgressBar = $PathFollow2D/Image/ProgressBar
+
 @export var grid: Resource                                                  # self explanatory vars
 @export var move_range := 6
 @export var move_speed := 600.0
+@export var max_health: float = 10
+
+@export var health: float = 10:
+	set(value):
+		health = value
+		await ready
+		_update_progress_bar_health()
+		_play_animation()
+
 @export var skin: Texture:
 	set(value):
 		skin = value
@@ -15,6 +29,7 @@ signal walk_finished                                                      # emit
 			await ready
 		_sprite.texture = value
 														 # Offset to apply to skin sprite in pixels
+
 @export var skin_offset := Vector2.ZERO:
 	set(value):
 		skin_offset = value
@@ -40,11 +55,7 @@ var _is_walking := false:
 	set(value):
 		_is_walking = value
 		set_process(_is_walking)
-
-@onready var _sprite: Sprite2D = $PathFollow2D/Image
-@onready var _anim_player: AnimationPlayer = $AnimationPlayer
-@onready var _path_follow: PathFollow2D = $PathFollow2D
-
+		
 
 func _ready() -> void:
 	set_process(false)
@@ -77,3 +88,9 @@ func walk_along(path: PackedVector2Array) -> void:                   # start wal
 		curve.add_point(grid.calculate_map_pos(point) - position)
 	cell = path[-1]
 	_is_walking = true
+
+func _update_progress_bar_health():
+	_progress_bar.value = (health/max_health) * 100
+	
+func _play_animation():
+	_anim_player.play("hurt")

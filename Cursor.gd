@@ -9,6 +9,7 @@ signal moved(new_cell)
 
 @export var grid: Resource
 @export var ui_cd := 0.1                                        # time before cursor can move again
+
 @onready var _timer: Timer = $Timer
 @onready var _anim_player: AnimationPlayer = $AnimationPlayer
 
