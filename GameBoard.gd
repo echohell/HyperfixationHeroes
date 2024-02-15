@@ -16,6 +16,8 @@ var _walkable_cells := []
 @onready var _action_panel: Panel = $"../Camera2D/CombatHUD/ActionButtons/HolderPanel"
 @onready var _HP_update: PlayerHealthStatus = $"../Camera2D/CombatHUD/UIHolder/StatusHolder"
 
+signal update_information(text: String)
+
 func _ready() -> void:
 	_reinitialize()
 
@@ -23,6 +25,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:                    # this is a test function for
 	if event.is_action_pressed("Damage_test"):                       # taking damage
 		_playergroup.get_node("Fourth").health -= 1.3
+		update_information.emit("[color=white]{0} player has taken: 13 damage.[/color] \n".format(["Fourth"]))
 		_update_hp("Fourth")
 		
 	if _active_unit and event.is_action_pressed("ui_cancel"):         # checks for escape to cancel
@@ -144,8 +147,8 @@ func _turn_off_canvas():
 func _on_move_pressed():
 	_turn_off_canvas()
 
-func _update_hp(name: String):
-	match name:
+func _update_hp(_name: String):
+	match _name:
 		"Main": _HP_update.set_health((_playergroup.get_node("Main").health / _playergroup.get_node("Main").max_health) * 100, "Main")
 		"Second": _HP_update.set_health((_playergroup.get_node("Second").health / _playergroup.get_node("Second").max_health) * 100, "Second")
 		"Third": _HP_update.set_health((_playergroup.get_node("Third").health / _playergroup.get_node("Third").max_health) * 100, "Third")

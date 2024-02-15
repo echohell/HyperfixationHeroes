@@ -23,6 +23,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_aggwy"]
 resource_name = "hurt"
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -30,7 +31,7 @@ tracks/0/path = NodePath("PathFollow2D/Image:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.075, 0.15, 0.2),
 "transitions": PackedFloat32Array(0.143587, 0.176777, 0.176777, 0.189465),
 "update": 0,
 "values": [Color(30, 30, 30, 1), Color(1, 1, 1, 1), Color(0.561994, 0.0193472, 0.0107329, 1), Color(1, 1, 1, 1)]

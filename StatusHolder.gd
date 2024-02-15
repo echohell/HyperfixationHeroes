@@ -19,8 +19,8 @@ func set_icon(texture: Texture2D, idpos: int):
 	elif idpos == 4: p4.texture = texture
 
 
-func set_health(value: float, name: String):
-	match name:
+func set_health(value: float, _name: String):
+	match _name:
 		"Main": p1bar.value = value
 		"Second": p2bar.value = value
 		"Third": p3bar.value = value
