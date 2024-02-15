@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dsvocy7vl4hge"]
+[gd_scene load_steps=55 format=3 uid="uid://dsvocy7vl4hge"]
 
 [ext_resource type="PackedScene" uid="uid://cptlb3bdg7jx1" path="res://Map.tscn" id="1_54y1x"]
 [ext_resource type="Texture2D" uid="uid://b57gaxow04ykp" path="res://Resources/Images/tilmapCC/tiles/background tiles/desert.png" id="1_eai7f"]
@@ -36,6 +36,9 @@
 [ext_resource type="Texture2D" uid="uid://cqej4ofp7aftm" path="res://Resources/Images/equipment/boots.png" id="29_4lncq"]
 [ext_resource type="Texture2D" uid="uid://7kgnhadakxxj" path="res://Resources/Images/equipment/pants.png" id="30_6wxm7"]
 [ext_resource type="Texture2D" uid="uid://d3ywyd636wx77" path="res://Resources/Images/HUD-UI/Exit.png" id="30_jfe03"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bbouf"]
+blend_mode = 3
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_1x1ur"]
 diffuse_texture = ExtResource("1_eai7f")
@@ -385,7 +388,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 value = 100.0
 
 [node name="CombatInfo" type="PanelContainer" parent="Camera2D/CombatHUD/UIHolder"]
-modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_bbouf")
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0

@@ -25,7 +25,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:                    # this is a test function for
 	if event.is_action_pressed("Damage_test"):                       # taking damage
 		_playergroup.get_node("Fourth").health -= 1.3
-		update_information.emit("[color=white]{0} player has taken: 13 damage.[/color] \n".format(["Fourth"]))
+		update_information.emit("[center][color=white]{0} player has taken: \n [color=red]13 damage.[/color] \n\n".format(["Fourth"]))
 		_update_hp("Fourth")
 		
 	if _active_unit and event.is_action_pressed("ui_cancel"):         # checks for escape to cancel
