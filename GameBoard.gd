@@ -13,13 +13,18 @@ var _walkable_cells := []
 @onready var _playergroup: Node2D = $PlayerGroup
 @onready var _unit_overlay: UnitOverlay = $UnitOverlay
 @onready var _unit_path: UnitPath = $UnitPath
-@onready var _action_panel: Panel = $Cursor/CanvasLayer/Panel
+@onready var _action_panel: Panel = $"../Camera2D/CombatHUD/ActionButtons/HolderPanel"
+@onready var _HP_update: PlayerHealthStatus = $"../Camera2D/CombatHUD/UIHolder/StatusHolder"
 
 func _ready() -> void:
 	_reinitialize()
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:                    # this is a test function for
+	if event.is_action_pressed("Damage_test"):                       # taking damage
+		_playergroup.get_node("Fourth").health -= 1.3
+		_update_hp("Fourth")
+		
 	if _active_unit and event.is_action_pressed("ui_cancel"):         # checks for escape to cancel
 		_deselect_active_unit()
 		_clear_active_unit()
@@ -28,7 +33,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _get_configuration_warning() -> String:                                # check grid for safety
 	var warning := ""
 	if not grid:
-		warning = "You need a Grid resource for this node to work."
+		warning = "Attach Resource Grid."
 	return warning
 
 
@@ -131,7 +136,6 @@ func _on_cursor_moved(new_cell: Vector2) -> void:
 func _turn_on_canvas(cell: Vector2):
 	_action_panel.visible = true
 	_action_panel.set_position(cell * 32)
-	_action_panel.position.x += 10
 
 func _turn_off_canvas():
 	_action_panel.visible = false
@@ -139,3 +143,10 @@ func _turn_off_canvas():
 
 func _on_move_pressed():
 	_turn_off_canvas()
+
+func _update_hp(name: String):
+	match name:
+		"Main": _HP_update.set_health((_playergroup.get_node("Main").health / _playergroup.get_node("Main").max_health) * 100, "Main")
+		"Second": _HP_update.set_health((_playergroup.get_node("Second").health / _playergroup.get_node("Second").max_health) * 100, "Second")
+		"Third": _HP_update.set_health((_playergroup.get_node("Third").health / _playergroup.get_node("Third").max_health) * 100, "Third")
+		"Fourth": _HP_update.set_health((_playergroup.get_node("Fourth").health / _playergroup.get_node("Fourth").max_health) * 100, "Fourth")

@@ -7,7 +7,6 @@ signal walk_finished                                                      # emit
 @onready var _sprite: Sprite2D = $PathFollow2D/Image
 @onready var _anim_player: AnimationPlayer = $AnimationPlayer
 @onready var _path_follow: PathFollow2D = $PathFollow2D
-@onready var _progress_bar: ProgressBar = $PathFollow2D/Image/ProgressBar
 
 @export var grid: Resource                                                  # self explanatory vars
 @export var move_range := 6
@@ -16,10 +15,9 @@ signal walk_finished                                                      # emit
 
 @export var health: float = 10:
 	set(value):
-		health = value
-		await ready
-		_update_progress_bar_health()
+		health = clamp(value, 0, max_health)
 		_play_animation()
+		await ready
 
 @export var skin: Texture:
 	set(value):
@@ -88,9 +86,7 @@ func walk_along(path: PackedVector2Array) -> void:                   # start wal
 		curve.add_point(grid.calculate_map_pos(point) - position)
 	cell = path[-1]
 	_is_walking = true
-
-func _update_progress_bar_health():
-	_progress_bar.value = (health/max_health) * 100
 	
+
 func _play_animation():
 	_anim_player.play("hurt")

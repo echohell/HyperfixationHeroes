@@ -1,8 +1,11 @@
-[gd_scene load_steps=50 format=3 uid="uid://dsvocy7vl4hge"]
+[gd_scene load_steps=53 format=3 uid="uid://dsvocy7vl4hge"]
 
 [ext_resource type="PackedScene" uid="uid://cptlb3bdg7jx1" path="res://Map.tscn" id="1_54y1x"]
 [ext_resource type="Texture2D" uid="uid://b57gaxow04ykp" path="res://Resources/Images/tilmapCC/tiles/background tiles/desert.png" id="1_eai7f"]
+[ext_resource type="Script" path="res://StatusHolder.gd" id="1_la14d"]
+[ext_resource type="Texture2D" uid="uid://b75qgh0vwbjyu" path="res://Resources/Images/HUD-UI/face.png" id="1_wf7cd"]
 [ext_resource type="Script" path="res://GameBoard.gd" id="2_3h1gr"]
+[ext_resource type="Texture2D" uid="uid://bfat0ff8x81sb" path="res://Resources/Images/HUD-UI/healthbar.png" id="2_bb0rm"]
 [ext_resource type="Texture2D" uid="uid://tmv8laknqn8t" path="res://Resources/Images/tilmapCC/tiles/background tiles/desert_n.png" id="2_n6n1a"]
 [ext_resource type="Resource" uid="uid://lcpjxqnnhp2e" path="res://Grid.tres" id="3_3p8u6"]
 [ext_resource type="Texture2D" uid="uid://ct5lx3dgqdbwr" path="res://Resources/Images/tilmapCC/tiles/background tiles/farmingpatch.png" id="3_md4jy"]
@@ -246,6 +249,221 @@ sources/0 = SubResource("TileSetAtlasSource_6fedc")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(640, 360)
 
+[node name="CombatHUD" type="CanvasLayer" parent="Camera2D"]
+
+[node name="UIHolder" type="Control" parent="Camera2D/CombatHUD"]
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="TurnQueue" type="PanelContainer" parent="Camera2D/CombatHUD/UIHolder"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -338.0
+offset_top = 18.0
+offset_right = 339.0
+offset_bottom = 114.0
+grow_horizontal = 2
+
+[node name="Queue" type="HBoxContainer" parent="Camera2D/CombatHUD/UIHolder/TurnQueue"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="StatusHolder" type="HBoxContainer" parent="Camera2D/CombatHUD/UIHolder"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -159.0
+offset_right = 256.095
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 100
+alignment = 1
+script = ExtResource("1_la14d")
+
+[node name="Player1" type="TextureRect" parent="Camera2D/CombatHUD/UIHolder/StatusHolder"]
+layout_mode = 2
+texture = ExtResource("1_wf7cd")
+expand_mode = 2
+
+[node name="ProgressBG" type="TextureRect" parent="Camera2D/CombatHUD/UIHolder/StatusHolder/Player1"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 110.0
+offset_right = 113.0
+offset_bottom = 137.0
+texture = ExtResource("2_bb0rm")
+stretch_mode = 6
+
+[node name="PlayerHP" type="ProgressBar" parent="Camera2D/CombatHUD/UIHolder/StatusHolder/Player1/ProgressBG"]
+modulate = Color(0.0412695, 0.576314, 0.0335556, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_right = 116.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+value = 100.0
+
+[node name="Player2" type="TextureRect" parent="Camera2D/CombatHUD/UIHolder/StatusHolder"]
+layout_mode = 2
+texture = ExtResource("1_wf7cd")
+expand_mode = 3
+
+[node name="ProgressBG" type="TextureRect" parent="Camera2D/CombatHUD/UIHolder/StatusHolder/Player2"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 110.0
+offset_right = 113.0
+offset_bottom = 137.0
+texture = ExtResource("2_bb0rm")
+stretch_mode = 6
+
+[node name="PlayerHP" type="ProgressBar" parent="Camera2D/CombatHUD/UIHolder/StatusHolder/Player2/ProgressBG"]
+modulate = Color(0.0412695, 0.576314, 0.0335556, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_right = 116.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+value = 100.0
+
+[node name="Player3" type="TextureRect" parent="Camera2D/CombatHUD/UIHolder/StatusHolder"]
+layout_mode = 2
+texture = ExtResource("1_wf7cd")
+expand_mode = 3
+
+[node name="ProgressBG" type="TextureRect" parent="Camera2D/CombatHUD/UIHolder/StatusHolder/Player3"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 110.0
+offset_right = 113.0
+offset_bottom = 137.0
+texture = ExtResource("2_bb0rm")
+stretch_mode = 6
+
+[node name="PlayerHP" type="ProgressBar" parent="Camera2D/CombatHUD/UIHolder/StatusHolder/Player3/ProgressBG"]
+modulate = Color(0.0412695, 0.576314, 0.0335556, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_right = 116.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+value = 100.0
+
+[node name="Player4" type="TextureRect" parent="Camera2D/CombatHUD/UIHolder/StatusHolder"]
+layout_mode = 2
+texture = ExtResource("1_wf7cd")
+expand_mode = 3
+
+[node name="ProgressBG" type="TextureRect" parent="Camera2D/CombatHUD/UIHolder/StatusHolder/Player4"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 110.0
+offset_right = 113.0
+offset_bottom = 137.0
+texture = ExtResource("2_bb0rm")
+stretch_mode = 6
+
+[node name="PlayerHP" type="ProgressBar" parent="Camera2D/CombatHUD/UIHolder/StatusHolder/Player4/ProgressBG"]
+modulate = Color(0.0412695, 0.576314, 0.0335556, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_right = 116.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+value = 100.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Camera2D/CombatHUD/UIHolder"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -184.0
+offset_right = 246.0
+offset_bottom = -21.0
+grow_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/CombatHUD/UIHolder/PanelContainer"]
+layout_mode = 2
+bbcode_enabled = true
+scroll_following = true
+
+[node name="ActionButtons" type="Control" parent="Camera2D/CombatHUD"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="HolderPanel" type="Panel" parent="Camera2D/CombatHUD/ActionButtons"]
+visible = false
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = -105.0
+offset_right = 176.0
+offset_bottom = 136.0
+
+[node name="Attack" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "ATTACK"
+icon = ExtResource("25_q2h5g")
+expand_icon = true
+
+[node name="Defend" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "DEFEND"
+icon = ExtResource("26_mclx3")
+expand_icon = true
+
+[node name="Item" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer"]
+layout_mode = 2
+text = "ITEM"
+icon = ExtResource("27_siqpr")
+expand_icon = true
+
+[node name="Special" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer"]
+layout_mode = 2
+text = "SPECIAL"
+icon = ExtResource("28_bpl4u")
+expand_icon = true
+
+[node name="Move" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer"]
+layout_mode = 2
+text = "MOVE"
+icon = ExtResource("29_4lncq")
+expand_icon = true
+
+[node name="Auto" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer"]
+layout_mode = 2
+text = "AUTO"
+icon = ExtResource("30_6wxm7")
+expand_icon = true
+
+[node name="Cancel" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "CANCEL"
+icon = ExtResource("30_jfe03")
+expand_icon = true
+
 [node name="Background Tiles" type="TileMap" parent="."]
 z_index = -2
 tile_set = SubResource("TileSet_8efwl")
@@ -302,65 +520,6 @@ script = ExtResource("5_624dh")
 
 [node name="Cursor" parent="GameBoard" instance=ExtResource("8_1olu6")]
 position = Vector2(16, 16)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="GameBoard/Cursor"]
-
-[node name="Panel" type="Panel" parent="GameBoard/Cursor/CanvasLayer"]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GameBoard/Cursor/CanvasLayer/Panel"]
-layout_mode = 0
-offset_left = 19.0
-offset_top = -121.0
-offset_right = 142.0
-offset_bottom = 120.0
-
-[node name="Attack" type="Button" parent="GameBoard/Cursor/CanvasLayer/Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "ATTACK"
-icon = ExtResource("25_q2h5g")
-expand_icon = true
-
-[node name="Defend" type="Button" parent="GameBoard/Cursor/CanvasLayer/Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "DEFEND"
-icon = ExtResource("26_mclx3")
-expand_icon = true
-
-[node name="Item" type="Button" parent="GameBoard/Cursor/CanvasLayer/Panel/VBoxContainer"]
-layout_mode = 2
-text = "ITEM"
-icon = ExtResource("27_siqpr")
-expand_icon = true
-
-[node name="Special" type="Button" parent="GameBoard/Cursor/CanvasLayer/Panel/VBoxContainer"]
-layout_mode = 2
-text = "SPECIAL"
-icon = ExtResource("28_bpl4u")
-expand_icon = true
-
-[node name="Move" type="Button" parent="GameBoard/Cursor/CanvasLayer/Panel/VBoxContainer"]
-layout_mode = 2
-text = "MOVE"
-icon = ExtResource("29_4lncq")
-expand_icon = true
-
-[node name="Auto" type="Button" parent="GameBoard/Cursor/CanvasLayer/Panel/VBoxContainer"]
-layout_mode = 2
-text = "AUTO"
-icon = ExtResource("30_6wxm7")
-expand_icon = true
-
-[node name="Cancel" type="Button" parent="GameBoard/Cursor/CanvasLayer/Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "CANCEL"
-icon = ExtResource("30_jfe03")
-expand_icon = true
 
 [node name="MainInterface" parent="." instance=ExtResource("10_vhcy4")]
 visible = false

@@ -1,2 +1,7 @@
 res://MainScene.tscn
 res://unit_path_tileset.tres
+res://GameBoard.gd
+res://StatusHolder.gd
+res://PlayerGroup.tscn
+res://OnfieldUnit.gd
+res://Unit.tscn
