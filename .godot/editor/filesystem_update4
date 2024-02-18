@@ -1,4 +1,3 @@
 res://MainScene.tscn
+res://Combat.gd
 res://unit_path_tileset.tres
-res://Text.gd
-res://GameBoard.gd
