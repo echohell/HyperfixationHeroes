@@ -1,6 +1,9 @@
+Node
+Node2D
+AnimationPlayer
+TextureRect
 RichTextLabel
 PanelContainer
-TextureRect
 ProgressBar
 Label
 HBoxContainer
@@ -9,6 +12,3 @@ CanvasLayer
 Panel
 Camera2D
 Button
-VBoxContainer
-DirectionalLight2D
-WorldEnvironment
