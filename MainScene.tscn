@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://dsvocy7vl4hge"]
+[gd_scene load_steps=55 format=3 uid="uid://dsvocy7vl4hge"]
 
 [ext_resource type="PackedScene" uid="uid://cptlb3bdg7jx1" path="res://Map.tscn" id="1_54y1x"]
 [ext_resource type="Texture2D" uid="uid://b57gaxow04ykp" path="res://Resources/Images/tilmapCC/tiles/background tiles/desert.png" id="1_eai7f"]
@@ -33,7 +33,6 @@
 [ext_resource type="Texture2D" uid="uid://blpg7qv4rolxv" path="res://Resources/Images/equipment/chest.png" id="26_mclx3"]
 [ext_resource type="Texture2D" uid="uid://b5od0wiccoyqw" path="res://Resources/Images/equipment/ring1.png" id="27_siqpr"]
 [ext_resource type="Texture2D" uid="uid://dnb015a45mxt1" path="res://Resources/Images/actions/sandstorm.png" id="28_bpl4u"]
-[ext_resource type="Script" path="res://Combat.gd" id="28_m28be"]
 [ext_resource type="Texture2D" uid="uid://cqej4ofp7aftm" path="res://Resources/Images/equipment/boots.png" id="29_4lncq"]
 [ext_resource type="Texture2D" uid="uid://7kgnhadakxxj" path="res://Resources/Images/equipment/pants.png" id="30_6wxm7"]
 [ext_resource type="Texture2D" uid="uid://d3ywyd636wx77" path="res://Resources/Images/HUD-UI/Exit.png" id="30_jfe03"]
@@ -264,26 +263,20 @@ offset_right = 1280.0
 offset_bottom = 720.0
 
 [node name="TurnQueue" type="PanelContainer" parent="Camera2D/CombatHUD/UIHolder"]
-texture_filter = 1
-clip_contents = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -320.0
-offset_top = 33.0
-offset_right = 320.0
-offset_bottom = 97.0
+offset_left = -338.0
+offset_top = 18.0
+offset_right = 339.0
+offset_bottom = 114.0
 grow_horizontal = 2
 
 [node name="Queue" type="HBoxContainer" parent="Camera2D/CombatHUD/UIHolder/TurnQueue"]
-clip_contents = true
-custom_minimum_size = Vector2(64, 64)
-layout_direction = 2
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
 size_flags_vertical = 4
-alignment = 1
 
 [node name="StatusHolder" type="HBoxContainer" parent="Camera2D/CombatHUD/UIHolder"]
 layout_mode = 1
@@ -309,10 +302,10 @@ expand_mode = 2
 
 [node name="ProgressBG" type="TextureRect" parent="Camera2D/CombatHUD/UIHolder/StatusHolder/Player1"]
 layout_mode = 0
-offset_left = -2.04749
-offset_top = 115.0
-offset_right = 113.953
-offset_bottom = 142.0
+offset_left = -3.0
+offset_top = 110.0
+offset_right = 113.0
+offset_bottom = 137.0
 texture = ExtResource("2_bb0rm")
 stretch_mode = 6
 
@@ -332,10 +325,10 @@ expand_mode = 3
 
 [node name="ProgressBG" type="TextureRect" parent="Camera2D/CombatHUD/UIHolder/StatusHolder/Player2"]
 layout_mode = 0
-offset_left = -2.04749
-offset_top = 115.0
-offset_right = 113.953
-offset_bottom = 142.0
+offset_left = -3.0
+offset_top = 110.0
+offset_right = 113.0
+offset_bottom = 137.0
 texture = ExtResource("2_bb0rm")
 stretch_mode = 6
 
@@ -355,10 +348,10 @@ expand_mode = 3
 
 [node name="ProgressBG" type="TextureRect" parent="Camera2D/CombatHUD/UIHolder/StatusHolder/Player3"]
 layout_mode = 0
-offset_left = -2.04749
-offset_top = 115.0
-offset_right = 113.953
-offset_bottom = 142.0
+offset_left = -3.0
+offset_top = 110.0
+offset_right = 113.0
+offset_bottom = 137.0
 texture = ExtResource("2_bb0rm")
 stretch_mode = 6
 
@@ -378,10 +371,10 @@ expand_mode = 3
 
 [node name="ProgressBG" type="TextureRect" parent="Camera2D/CombatHUD/UIHolder/StatusHolder/Player4"]
 layout_mode = 0
-offset_left = -2.04749
-offset_top = 115.0
-offset_right = 113.953
-offset_bottom = 142.0
+offset_left = -3.0
+offset_top = 110.0
+offset_right = 113.0
+offset_bottom = 137.0
 texture = ExtResource("2_bb0rm")
 stretch_mode = 6
 
@@ -491,16 +484,9 @@ layer_0/tile_data = PackedInt32Array(65574, 0, 2, 65573, 0, 2, 327711, 327685, 1
 script = ExtResource("2_3h1gr")
 grid = ExtResource("3_3p8u6")
 
-[node name="CombatProcessing" type="Node2D" parent="GameBoard" node_paths=PackedStringArray("combat_UI", "controller")]
-script = ExtResource("28_m28be")
-combat_UI = NodePath("../../Camera2D/CombatHUD/UIHolder")
-controller = NodePath("..")
-
 [node name="PlayerGroup" parent="GameBoard" instance=ExtResource("17_on3e7")]
-visible = false
 
 [node name="EnemyGroup" type="Node2D" parent="GameBoard"]
-visible = false
 script = ExtResource("19_l1q22")
 
 [node name="Main" parent="GameBoard/EnemyGroup" instance=ExtResource("9_54k3t")]
@@ -563,7 +549,7 @@ offset_bottom = 40.0
 text = "Menu"
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-energy = 0.15
+energy = 0.5
 blend_mode = 2
 
 [connection signal="update_information" from="GameBoard" to="Camera2D/CombatHUD/UIHolder/CombatInfo/Text" method="_on_game_board_update_information"]

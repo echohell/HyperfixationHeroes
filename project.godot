@@ -14,11 +14,6 @@ config/name="Hyperfixation Heroes"
 run/main_scene="res://MainScene.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 
-[autoload]
-
-SkillData="*res://skill_data.tscn"
-CombatantData="*res://combatant_data.tscn"
-
 [display]
 
 window/size/viewport_width=1280
