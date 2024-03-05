@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cws7m8bg6gf6c"]
+[gd_scene load_steps=6 format=3 uid="uid://cws7m8bg6gf6c"]
 
 [ext_resource type="Script" path="res://combatant_DB.gd" id="1_awbmi"]
 [ext_resource type="Texture2D" uid="uid://crp52x171d51g" path="res://Resources/Images/testimages/characterblocking.png" id="2_rra0q"]
 [ext_resource type="Script" path="res://CombatantData.gd" id="2_u2n0w"]
+[ext_resource type="PackedScene" uid="uid://b3y5cl40vr61w" path="res://Unit.tscn" id="4_fqo7p"]
 
 [sub_resource type="Resource" id="Resource_s5ymj"]
 script = ExtResource("2_u2n0w")
@@ -14,6 +15,7 @@ movement = 3
 initiative = 5
 icon = ExtResource("2_rra0q")
 map_sprite = ExtResource("2_rra0q")
+unit = ExtResource("4_fqo7p")
 skills = Array[String]([])
 
 [node name="CombatantData" type="Node"]

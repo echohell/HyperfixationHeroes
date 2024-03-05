@@ -1,6 +1,6 @@
 extends Resource
 
-class_name CombatantDefinition
+class_name CombatantDefinition                                               # combatant definition
 
 @export var name = ""
 
@@ -16,6 +16,7 @@ class_name CombatantDefinition
 @export_group("Visuals")
 @export var icon: Texture2D
 @export var map_sprite: Texture2D
+@export var unit: PackedScene
 
 @export_group("Skills")
 @export var skills: Array[String]

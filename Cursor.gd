@@ -3,7 +3,7 @@ extends Node2D
 
 class_name Cursor
 
-								# signals for accepting click on hovered cell or pressing ui_accept
+								   # signals for moving to a new hovered cell or pressing ui_accept
 signal accept_pressed(cell)
 signal moved(new_cell)
 
@@ -13,7 +13,6 @@ signal moved(new_cell)
 @onready var _timer: Timer = $Timer
 @onready var _anim_player: AnimationPlayer = $AnimationPlayer
 
-
 														# coords for current cell the cursor hovers
 var cell := Vector2.ZERO:
 	set(value):
@@ -22,8 +21,8 @@ var cell := Vector2.ZERO:
 			return
 		
 		cell = new_cell                                          # if we move to a new cell, send a
-		position = grid.calculate_map_pos(cell)            # signal and start cd timer for dir keys
-		emit_signal("moved", cell)
+		position = grid.calculate_map_pos(cell)                        # pos update and then send a
+		emit_signal("moved", cell)                         # signal and start cd timer for dir keys
 		_timer.start()
 
 
@@ -38,13 +37,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		cell = grid.calculate_grid_coords(event.position)                    # left click or accept
 	elif event.is_action_pressed("left click") or event.is_action_pressed("ui_accept"):
 		emit_signal("accept_pressed", cell)                   # send signal that press was accepted
-		get_viewport().set_input_as_handled()
+		get_viewport().set_input_as_handled()        # stops any other inputs and pushes main input
 
 	var should_move := event.is_pressed()                   # bool returns true if event is pressed
-	if event.is_echo():                                      # bool returns true if event is echoed
+	if event.is_echo():                                    # if there is any echo input, stop timer
 		should_move = should_move and _timer.is_stopped()
 	
-	if not should_move:
+	if not should_move:                                              # return if we should not move
 		return
 	
 	if event.is_action("ui_right"):                              # left right up down with keyboard
@@ -57,5 +56,5 @@ func _unhandled_input(event: InputEvent) -> void:
 		cell +=Vector2.DOWN
 
 
-func _draw() -> void:                                         # draw cursor rectangle to show place
-	draw_rect(Rect2(-grid.cell_size / 2, grid.cell_size), Color.ALICE_BLUE, false, 3)
+func _draw() -> void:                                     # draw white-ish rectangle on cursor tile
+	draw_rect(Rect2(-grid.cell_size / 2, grid.cell_size), Color.ALICE_BLUE, false, 4)

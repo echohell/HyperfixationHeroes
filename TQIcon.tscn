@@ -1,36 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://vjmq26ikaxpe"]
+[gd_scene load_steps=8 format=3 uid="uid://vjmq26ikaxpe"]
 
 [ext_resource type="Texture2D" uid="uid://b75qgh0vwbjyu" path="res://Resources/Images/HUD-UI/face.png" id="1_4llml"]
-[ext_resource type="Texture2D" uid="uid://kijufof4enom" path="res://Resources/Images/HUD-UI/1by1scale/onetilereticle.png" id="2_gnajp"]
 [ext_resource type="Script" path="res://TQIcon.gd" id="2_qypg3"]
-
-[sub_resource type="Animation" id="Animation_lr57f"]
-resource_name = "fadeout"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 35)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.574349, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
+[ext_resource type="Texture2D" uid="uid://7alpfwj7ruro" path="res://Resources/Images/HUD-UI/white32s/white_border.png" id="3_pp4bt"]
 
 [sub_resource type="Animation" id="Animation_6pdra"]
 length = 0.001
@@ -46,13 +18,79 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+
+[sub_resource type="Animation" id="Animation_lr57f"]
+resource_name = "fadeout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 35)]
+}
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
+tracks/1/path = NodePath(".:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.554785, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Border:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.535887, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y0g1x"]
+resource_name = "reset"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Border:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -62,21 +100,24 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_heoi1"]
 _data = {
 "RESET": SubResource("Animation_6pdra"),
-"fadeout": SubResource("Animation_lr57f")
+"fadeout": SubResource("Animation_lr57f"),
+"reset": SubResource("Animation_y0g1x")
 }
 
-[node name="TurnQueueIcon" type="TextureRect"]
+[node name="TurnQueueIcon" type="TextureRect" node_paths=PackedStringArray("_animplayer")]
 offset_right = 64.0
 offset_bottom = 64.0
 texture = ExtResource("1_4llml")
 expand_mode = 2
 script = ExtResource("2_qypg3")
+_animplayer = NodePath("AnimationPlayer")
 
 [node name="Border" type="TextureRect" parent="."]
+show_behind_parent = true
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
-texture = ExtResource("2_gnajp")
+texture = ExtResource("3_pp4bt")
 expand_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
