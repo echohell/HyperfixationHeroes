@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwup4pfqclk01"]
+
+[ext_resource type="Script" path="res://PlayerStatus.gd" id="1_2yph0"]
+[ext_resource type="Texture2D" uid="uid://b75qgh0vwbjyu" path="res://Resources/Images/HUD-UI/face.png" id="1_ofk84"]
+[ext_resource type="Texture2D" uid="uid://bfat0ff8x81sb" path="res://Resources/Images/HUD-UI/healthbar.png" id="2_f7b3n"]
+
+[node name="StatusIcon" type="PanelContainer"]
+offset_right = 116.0
+offset_bottom = 115.0
+script = ExtResource("1_2yph0")
+
+[node name="Player" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_ofk84")
+expand_mode = 2
+
+[node name="ProgressBG" type="TextureRect" parent="Player"]
+layout_mode = 0
+offset_top = 115.0
+offset_right = 116.0
+offset_bottom = 142.0
+texture = ExtResource("2_f7b3n")
+stretch_mode = 6
+
+[node name="PlayerHP" type="ProgressBar" parent="Player/ProgressBG"]
+modulate = Color(0.0412695, 0.576314, 0.0335556, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_right = 116.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+value = 100.0

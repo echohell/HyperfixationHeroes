@@ -1,3 +1,6 @@
 res://MainScene.tscn
 res://Combat.gd
 res://unit_path_tileset.tres
+res://new_tile_set.tres
+res://Combat_UI.gd
+res://GameBoard.gd

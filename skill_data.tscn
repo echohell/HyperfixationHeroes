@@ -1,48 +1,146 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbft0k5tdr43o"]
+[gd_scene load_steps=20 format=3 uid="uid://cbft0k5tdr43o"]
 
 [ext_resource type="Script" path="res://skill_DB.gd" id="1_vfxb3"]
 [ext_resource type="Script" path="res://SkillData.gd" id="2_2rscv"]
 [ext_resource type="Texture2D" uid="uid://bi33afrca5a0" path="res://Resources/Images/actions/fireball.png" id="2_c6vpr"]
 [ext_resource type="Texture2D" uid="uid://bf1wrlc1yfmgx" path="res://Resources/Images/actions/rend.png" id="4_5lmlh"]
 [ext_resource type="Texture2D" uid="uid://cajrshhh8lkyb" path="res://Resources/Images/actions/meteor.png" id="5_nf1v0"]
+[ext_resource type="Texture2D" uid="uid://coa7nlljow1yo" path="res://Resources/Images/actions/icewall.png" id="5_tfujx"]
+[ext_resource type="Texture2D" uid="uid://h77jjvdw5g85" path="res://Resources/Images/actions/mudshot.png" id="7_rw8wj"]
+[ext_resource type="Texture2D" uid="uid://dnb015a45mxt1" path="res://Resources/Images/actions/sandstorm.png" id="8_05xw5"]
+[ext_resource type="Texture2D" uid="uid://0kc8hq7xxfpg" path="res://Resources/Images/actions/Sandtrap.png" id="9_ykw4k"]
 
-[sub_resource type="Resource" id="Resource_nlxc8"]
+[sub_resource type="Resource" id="Resource_cjyac"]
 script = ExtResource("2_2rscv")
 name = "Fireball"
+skill_base = "attack_magic"
 min_range = 0
 max_range = 0
-min_damage = 2
-max_damage = 6
-min_hitchance = 90
+min_damage = 6
+max_damage = 9
+min_hitchance = 50
+max_hitchance = 85
+icon = ExtResource("2_c6vpr")
+
+[sub_resource type="Resource" id="Resource_acmlu"]
+script = ExtResource("2_2rscv")
+name = "Ice Wall"
+skill_base = "attack_magic"
+min_range = 0
+max_range = 0
+min_damage = 1
+max_damage = 2
+min_hitchance = 95
+max_hitchance = 100
+icon = ExtResource("5_tfujx")
+
+[sub_resource type="Resource" id="Resource_b661n"]
+script = ExtResource("2_2rscv")
+name = "Magic Attack"
+skill_base = "attack_magic"
+min_range = 0
+max_range = 0
+min_damage = 1
+max_damage = 5
+min_hitchance = 99
 max_hitchance = 100
 icon = ExtResource("2_c6vpr")
 
-[sub_resource type="Resource" id="Resource_frc7o"]
+[sub_resource type="Resource" id="Resource_f855i"]
 script = ExtResource("2_2rscv")
-name = "Rend"
+name = "Melee Attack"
+skill_base = "attack_melee"
 min_range = 1
 max_range = 1
-min_damage = 3
-max_damage = 7
-min_hitchance = 95
+min_damage = 1
+max_damage = 5
+min_hitchance = 99
 max_hitchance = 100
 icon = ExtResource("4_5lmlh")
 
-[sub_resource type="Resource" id="Resource_kadei"]
+[sub_resource type="Resource" id="Resource_uq46d"]
 script = ExtResource("2_2rscv")
-name = "Powershot"
-min_range = 2
-max_range = 6
-min_damage = 1
+name = "Meteor"
+skill_base = "attack_magic"
+min_range = 0
+max_range = 0
+min_damage = 8
+max_damage = 12
+min_hitchance = 35
+max_hitchance = 75
+icon = ExtResource("5_nf1v0")
+
+[sub_resource type="Resource" id="Resource_24ipm"]
+script = ExtResource("2_2rscv")
+name = "Mudshot"
+skill_base = "attack_magic"
+min_range = 0
+max_range = 0
+min_damage = 4
 max_damage = 8
 min_hitchance = 75
-max_hitchance = 90
-icon = ExtResource("5_nf1v0")
+max_hitchance = 95
+icon = ExtResource("7_rw8wj")
+
+[sub_resource type="Resource" id="Resource_e2su7"]
+script = ExtResource("2_2rscv")
+name = "Ranged Attack"
+skill_base = "attack_ranged"
+min_range = 2
+max_range = 4
+min_damage = 1
+max_damage = 5
+min_hitchance = 99
+max_hitchance = 100
+icon = ExtResource("7_rw8wj")
+
+[sub_resource type="Resource" id="Resource_esfkw"]
+script = ExtResource("2_2rscv")
+name = "Rend"
+skill_base = "attack_melee"
+min_range = 1
+max_range = 1
+min_damage = 5
+max_damage = 9
+min_hitchance = 75
+max_hitchance = 95
+icon = ExtResource("4_5lmlh")
+
+[sub_resource type="Resource" id="Resource_mua26"]
+script = ExtResource("2_2rscv")
+name = "Sand Storm"
+skill_base = "attack_magic"
+min_range = 0
+max_range = 0
+min_damage = 7
+max_damage = 8
+min_hitchance = 75
+max_hitchance = 85
+icon = ExtResource("8_05xw5")
+
+[sub_resource type="Resource" id="Resource_dmx05"]
+script = ExtResource("2_2rscv")
+name = "Sand Trap"
+skill_base = "attack_magic"
+min_range = 0
+max_range = 0
+min_damage = 3
+max_damage = 6
+min_hitchance = 85
+max_hitchance = 99
+icon = ExtResource("9_ykw4k")
 
 [node name="SkillData" type="Node"]
 script = ExtResource("1_vfxb3")
 skills = {
-"attack_magic": SubResource("Resource_nlxc8"),
-"attack_melee": SubResource("Resource_frc7o"),
-"attack_ranged": SubResource("Resource_kadei")
+"Fireball": SubResource("Resource_cjyac"),
+"Icewall": SubResource("Resource_acmlu"),
+"Magicattack": SubResource("Resource_b661n"),
+"Meleeattack": SubResource("Resource_f855i"),
+"Meteor": SubResource("Resource_uq46d"),
+"Mudshot": SubResource("Resource_24ipm"),
+"Rangeattack": SubResource("Resource_e2su7"),
+"Rend": SubResource("Resource_esfkw"),
+"Sandstorm": SubResource("Resource_mua26"),
+"Sandtrap": SubResource("Resource_dmx05")
 }

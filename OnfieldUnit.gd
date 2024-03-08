@@ -8,10 +8,10 @@ signal walk_finished                                                      # emit
 @onready var _anim_player: AnimationPlayer = $AnimationPlayer
 @onready var _path_follow: PathFollow2D = $PathFollow2D
 
-@export var grid: Resource                                                  # self explanatory vars
-@export var move_range := 6
-@export var move_speed := 600.0
+@export var grid: Resource
+@export var move_speed := 250.0
 @export var max_health: float = 10
+@export var move_range: int = 6
 
 @export var health: float = 10:
 	set(value):
@@ -90,3 +90,9 @@ func walk_along(path: PackedVector2Array) -> void:                   # start wal
 
 func _play_animation():
 	_anim_player.play("hurt")
+
+func get_move_range():
+	return move_range
+
+func set_move_range(value: int):
+	move_range = value
