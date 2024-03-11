@@ -321,10 +321,9 @@ shadow_color = Color(1, 1, 1, 0)
 texture = ExtResource("4_w4nmc")
 texture_scale = 3.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("inv", "nav")]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("nav")]
 position = Vector2(211, 294)
 script = ExtResource("6_qghkg")
-inv = NodePath("../Camera2D/CanvasLayer/Control/Inventory/inventoryUI")
 nav = NodePath("NavigationAgent2D")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CharacterBody2D"]
@@ -350,7 +349,6 @@ zoom = Vector2(2, 2)
 follow_viewport_enabled = true
 
 [node name="Control" type="Control" parent="Camera2D/CanvasLayer"]
-top_level = true
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
@@ -376,5 +374,4 @@ offset_top = 30.0
 offset_right = 639.0
 offset_bottom = 361.0
 
-[connection signal="pressed" from="Camera2D/CanvasLayer/Control/Inventory" to="CharacterBody2D" method="_on_inventory_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/Control/Inventory" to="Camera2D/CanvasLayer/Control/Inventory/inventoryUI" method="_on_inventory_pressed"]

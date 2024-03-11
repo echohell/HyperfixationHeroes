@@ -1,4 +1,6 @@
+res://Inventory/UI/inventoryUI.gd
 res://in_house.tscn
+res://Inventory/UI/PlayerInventory.tres
 res://Combat.gd
 res://unit_path_tileset.tres
 res://new_tile_set.tres

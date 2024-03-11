@@ -1,7 +1,7 @@
 extends Control
 
 @onready var inv: Inventory = preload("res://Inventory/UI/PlayerInventory.tres")
-@onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+@onready var slots: Array = $NinePatchRect/NinePatchRect/ScrollContainer/GridContainer.get_children()
 
 var is_open = false
 
@@ -28,3 +28,10 @@ func open():
 func close():
 	visible = false
 	is_open = false
+
+
+func _on_inventory_pressed():
+	if is_open == true:
+		close()
+	else:
+		open()
