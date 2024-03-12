@@ -265,7 +265,7 @@ layer_2/tile_data = PackedInt32Array(327689, 131073, 0, 327688, 196609, 0, 32768
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(-68, 16)
-color = Color(0.219608, 0.376471, 0.301961, 1)
+color = Color(0.219608, 0.219608, 0.0352941, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(179, 244)
@@ -358,9 +358,10 @@ offset_bottom = 360.0
 
 [node name="Inventory" type="Button" parent="Camera2D/CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 1.0
-offset_right = 93.0
-offset_bottom = 31.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 95.0
+offset_bottom = 32.0
 text = "Inventory"
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer/Control/Inventory"]
@@ -372,9 +373,9 @@ texture = ExtResource("7_m1xh3")
 
 [node name="inventoryUI" parent="Camera2D/CanvasLayer/Control/Inventory" instance=ExtResource("7_bno3k")]
 visible = false
-offset_top = 30.0
-offset_right = 639.0
-offset_bottom = 361.0
+offset_left = -1.0
+offset_top = 31.0
+offset_bottom = 357.0
 
 [connection signal="pressed" from="Camera2D/CanvasLayer/Control/Inventory" to="CharacterBody2D" method="_on_inventory_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/Control/Inventory" to="Camera2D/CanvasLayer/Control/Inventory/inventoryUI" method="_on_inventory_pressed"]

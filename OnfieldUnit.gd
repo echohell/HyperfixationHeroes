@@ -61,7 +61,7 @@ func _ready() -> void:
 
 	cell = grid.calculate_grid_coords(position)
 	position = grid.calculate_map_pos(cell)
-
+	
 	if not Engine.is_editor_hint():                            # create curve here so we can use it
 		curve = Curve2D.new()
 
@@ -73,6 +73,7 @@ func _process(delta: float) -> void:
 		_is_walking = false
 		_path_follow.progress = 0.00001                         # DONT SET THIS TO 0.0 CAUSES ERROR
 		position = grid.calculate_map_pos(cell)
+		
 		curve.clear_points()
 		emit_signal("walk_finished")
 

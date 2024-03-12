@@ -1,5 +1,9 @@
+Label
+TextEdit
 RichTextLabel
 TextureRect
+GPUParticles2D
+AudioStreamPlayer2D
 NinePatchRect
 ItemList
 ColorRect
@@ -9,7 +13,3 @@ CanvasLayer
 Button
 Control
 NavigationAgent2D
-CharacterBody2D
-DirectionalLight2D
-NavigationRegion2D
-PointLight2D
