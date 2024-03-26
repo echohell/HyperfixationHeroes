@@ -47,6 +47,7 @@ var is_selected := false:                              # toggles the selected an
 		if is_selected:
 			_anim_player.play("selected")
 		else:
+			await get_tree().create_timer(randi() % 2).timeout
 			_anim_player.play("idle")               # idle right now just resets the value of alpha
 
 var _is_walking := false:
@@ -58,12 +59,16 @@ var _is_walking := false:
 func _ready() -> void:
 	set_process(false)
 	_path_follow.rotates = false
+	randomize()
 
 	cell = grid.calculate_grid_coords(position)
 	position = grid.calculate_map_pos(cell)
-
+	
 	if not Engine.is_editor_hint():                            # create curve here so we can use it
 		curve = Curve2D.new()
+		
+	await get_tree().create_timer(randi() % 3).timeout
+	_anim_player.play("idle")
 
 
 func _process(delta: float) -> void:
@@ -73,6 +78,7 @@ func _process(delta: float) -> void:
 		_is_walking = false
 		_path_follow.progress = 0.00001                         # DONT SET THIS TO 0.0 CAUSES ERROR
 		position = grid.calculate_map_pos(cell)
+		
 		curve.clear_points()
 		emit_signal("walk_finished")
 
@@ -81,7 +87,6 @@ func walk_along(path: PackedVector2Array) -> void:                   # start wal
 	if path.is_empty():
 		return
 
-	curve.add_point(Vector2.ZERO)
 	for point in path:
 		curve.add_point(grid.calculate_map_pos(point) - position)
 	cell = path[-1]

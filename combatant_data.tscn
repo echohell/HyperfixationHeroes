@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cws7m8bg6gf6c"]
+[gd_scene load_steps=7 format=3 uid="uid://cws7m8bg6gf6c"]
 
 [ext_resource type="Script" path="res://combatant_DB.gd" id="1_awbmi"]
+[ext_resource type="Texture2D" uid="uid://cokb83bq0a5ye" path="res://Resources/Images/testimages/head_portrait.png" id="2_jc8o3"]
 [ext_resource type="Texture2D" uid="uid://crp52x171d51g" path="res://Resources/Images/testimages/characterblocking.png" id="2_rra0q"]
 [ext_resource type="Script" path="res://CombatantData.gd" id="2_u2n0w"]
 [ext_resource type="PackedScene" uid="uid://b3y5cl40vr61w" path="res://Unit.tscn" id="4_fqo7p"]
@@ -11,9 +12,9 @@ name = "Player1"
 _class_t = 0
 _class_m = 0
 max_hp = 10
-movement = 3
+movement = 4
 initiative = 5
-icon = ExtResource("2_rra0q")
+icon = ExtResource("2_jc8o3")
 map_sprite = ExtResource("2_rra0q")
 unit = ExtResource("4_fqo7p")
 skills = Array[String]([])

@@ -32,6 +32,7 @@ var _active_unit: Unit
 var _walkable_cells := []
 var _occupied_spaces = []
 var _blocking_spaces = [[],[],[]]                                #ground, then flying, then mounted
+var _enemy_turn_val = -1
 var movement = 3:
 	set = set_movement,
 	get = get_movement
@@ -80,17 +81,25 @@ func get_combatant_at_pos(target_position: Vector2i):           # func gets comb
 	return null
 
 func _ready() -> void:
-	_astar.region = Rect2i(0, 3, grid.size.x, grid.size.y)                  # this is combat zone
+	_astar.region = Rect2i(-1, 3, grid.size.x + 1, grid.size.y)                  # this is combat zone
 	_astar.cell_size = grid.cell_size                                    # is set in grid resource
 	_astar.default_compute_heuristic = AStarGrid2D.HEURISTIC_MANHATTAN   # manhattan is for 4 point
 	_astar.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER   # can turn this on if we want diagonal
 	_astar.update()
 	
 	for i in _tilemap.getcombatnumbers():                        # set point solids for combat area
-		_astar.set_point_solid(i)
+		var checkvalresult = checkvalue(i)
+		if checkvalresult == true:
+			_astar.set_point_solid(i)
 	
 	_reinitialize()
-	
+
+func checkvalue(value):
+	var valy = value.y
+	if (valy > 3 and valy <= 17):
+		return true
+	else:
+		return false
 
 func _on_combat_processing_combatant_added(combatant):                       # adds combatant space
 	_occupied_spaces.append(combatant.position)
@@ -99,13 +108,20 @@ func _on_combat_processing_combatant_down(combatant):                     # remo
 	_occupied_spaces.erase(combatant.position)
 
 func _on_combat_processing_turn_advance(combatant: Dictionary):         # process turn advancements
+	
+	var pos = combatant.position
+	
+	#_active_unit = _units[pos]                                                  # Sets active unit
+	#_active_unit.is_selected = true
+	
 	if combatant.side == 0:
 		_player_turn = true
+		_enemy_turn_val = -1
 	else:
 		_player_turn = false
+		_enemy_turn_val = _enemy_turn_val + 1
 	
 	controlling_node = combatant.sprite                                  # controlling node changes
-	
 	movement = combatant.movement                                     # their movement value is set
 	# update_point_weight()                                    # still deciding if i wanna use this
 
@@ -120,7 +136,7 @@ func get_distance(point1: Vector2i, point2: Vector2i):      # get absolute integ
 func _process(delta):                        # processed ai if they have not arrived at destination
 	if _arrived == false:
 		controlling_node.position += controlling_node.position.direction_to(_next_position) * delta * _move_speed
-		_enemygroup.get_child(0).position = controlling_node.position + Vector2(16,16) # offset for sprite pos
+		_enemygroup.get_child(_enemy_turn_val).position = controlling_node.position + Vector2(16,16) # offset for sprite pos
 		if controlling_node.position.distance_to(_next_position) < 1:
 			_occupied_spaces.erase(_previous_position)               # change the space it occupies
 			_astar.set_point_weight_scale(_previous_position, 1)    # set the weight back to normal
@@ -160,7 +176,6 @@ func ai_process(target_position: Vector2i):                      # pass in where
 func ai_move(target_position: Vector2i):                       # pass in the target pos + tile size
 	var current_position = _bgmap.local_to_map(controlling_node.position)     # convert current pos
 	find_path(target_position)                                                # find the astar path
-	print(target_position)                                   # this should spit out where its going
 	move_on_path(current_position)                                   # move on the given astar path
 	
 
@@ -250,19 +265,13 @@ func is_occupied(cell: Vector2) -> bool:                                  # retu
 
 
 func get_walkable_cells(unit: Unit) -> Array:              # returns array of cells for yellow move
-	return _flood_fill(unit.cell, unit.move_range)
+	return _flood_fill(unit.cell, movement)
 
 
 func _reinitialize() -> void:                                 # clears and refills dictionary units
 	_units.clear()
 
 	for child in _playergroup.get_children():            # adds unit to player group list currently
-		var unit := child as Unit
-		if not unit:
-			continue
-		_units[unit.cell] = unit
-	
-	for child in _enemygroup.get_children():                        # adds unit to enemy group list 
 		var unit := child as Unit
 		if not unit:
 			continue
@@ -307,9 +316,9 @@ func _move_active_unit(new_cell: Vector2) -> void:
 	_units[new_cell] = _active_unit
 	_deselect_active_unit()
 	_active_unit.walk_along(_unit_path.current_path)
-	controlling_node.position = _active_unit.position * 32
-	print(controlling_node.position, " ", _active_unit.position * 32)
 	await _active_unit.walk_finished
+	controlling_node.position = Vector2i(_active_unit.position - Vector2(16, 16))
+	combat.get_current_combatant().position = Vector2i((_active_unit.position - Vector2(16, 16)) / 32)
 	_clear_active_unit()
 
 
@@ -320,7 +329,6 @@ func _select_unit(cell: Vector2) -> void:               # Selects unit in cell i
 	_turn_on_canvas(cell)
 	_active_unit = _units[cell]                                                  # Sets active unit
 	_active_unit.is_selected = true
-	print(controlling_node.position, " ", _active_unit.position)
 
 func _deselect_active_unit() -> void:       # Deselects active unit, clearing cell overlay and path
 	_active_unit.is_selected = false
@@ -340,7 +348,7 @@ func _on_cursor_accept_pressed(cell: Vector2) -> void:        # accept unit pres
 		_select_unit(cell)
 	elif _active_unit.is_selected:
 		_move_active_unit(cell)
-		_active_unit.move_range -= _unit_path.get_calculated_size() - 1
+		movement -= _unit_path.get_calculated_size() - 1
 								   # reduce movement range by point path size after confirming move
 
 func _on_cursor_moved(new_cell: Vector2) -> void:               # check active unit values and draw
@@ -357,7 +365,7 @@ func _turn_off_canvas():
 
 
 func _on_move_pressed():                              # is move range is greater than 0, show paths
-	if _active_unit.move_range > 0:
+	if movement > 0:
 		_move_pressed = true
 		_walkable_cells = get_walkable_cells(_active_unit)
 		_unit_overlay.draw(_walkable_cells)
