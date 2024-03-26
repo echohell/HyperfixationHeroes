@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cbft0k5tdr43o"]
+[gd_scene load_steps=38 format=3 uid="uid://cbft0k5tdr43o"]
 
 [ext_resource type="Script" path="res://skill_DB.gd" id="1_vfxb3"]
 [ext_resource type="Script" path="res://SkillData.gd" id="2_2rscv"]
@@ -10,10 +10,59 @@
 [ext_resource type="Texture2D" uid="uid://dnb015a45mxt1" path="res://Resources/Images/actions/sandstorm.png" id="8_05xw5"]
 [ext_resource type="Texture2D" uid="uid://0kc8hq7xxfpg" path="res://Resources/Images/actions/Sandtrap.png" id="9_ykw4k"]
 
+[sub_resource type="Resource" id="Resource_oeefa"]
+script = ExtResource("2_2rscv")
+name = "Arrow to the Knee"
+skill_base = "attack_ranged"
+skill_desc = ""
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
+[sub_resource type="Resource" id="Resource_1qbr7"]
+script = ExtResource("2_2rscv")
+name = "Camo"
+skill_base = "attack_ranged"
+skill_desc = ""
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
+[sub_resource type="Resource" id="Resource_yw01o"]
+script = ExtResource("2_2rscv")
+name = "Charge Magic"
+skill_base = ""
+skill_desc = ""
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
+[sub_resource type="Resource" id="Resource_6w1pj"]
+script = ExtResource("2_2rscv")
+name = "Elemental Strike"
+skill_base = "attack_melee"
+skill_desc = ""
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
 [sub_resource type="Resource" id="Resource_cjyac"]
 script = ExtResource("2_2rscv")
 name = "Fireball"
 skill_base = "attack_magic"
+skill_desc = ""
 min_range = 0
 max_range = 0
 min_damage = 6
@@ -26,6 +75,7 @@ icon = ExtResource("2_c6vpr")
 script = ExtResource("2_2rscv")
 name = "Ice Wall"
 skill_base = "attack_magic"
+skill_desc = ""
 min_range = 0
 max_range = 0
 min_damage = 1
@@ -38,6 +88,7 @@ icon = ExtResource("5_tfujx")
 script = ExtResource("2_2rscv")
 name = "Magic Attack"
 skill_base = "attack_magic"
+skill_desc = ""
 min_range = 0
 max_range = 0
 min_damage = 1
@@ -46,10 +97,35 @@ min_hitchance = 99
 max_hitchance = 100
 icon = ExtResource("2_c6vpr")
 
+[sub_resource type="Resource" id="Resource_w8j0o"]
+script = ExtResource("2_2rscv")
+name = "Magical Curse"
+skill_base = "attack_magic"
+skill_desc = ""
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
+[sub_resource type="Resource" id="Resource_kqj40"]
+script = ExtResource("2_2rscv")
+name = ""
+skill_base = ""
+skill_desc = ""
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
 [sub_resource type="Resource" id="Resource_f855i"]
 script = ExtResource("2_2rscv")
 name = "Melee Attack"
 skill_base = "attack_melee"
+skill_desc = ""
 min_range = 1
 max_range = 1
 min_damage = 1
@@ -62,6 +138,7 @@ icon = ExtResource("4_5lmlh")
 script = ExtResource("2_2rscv")
 name = "Meteor"
 skill_base = "attack_magic"
+skill_desc = ""
 min_range = 0
 max_range = 0
 min_damage = 8
@@ -74,6 +151,7 @@ icon = ExtResource("5_nf1v0")
 script = ExtResource("2_2rscv")
 name = "Mudshot"
 skill_base = "attack_magic"
+skill_desc = ""
 min_range = 0
 max_range = 0
 min_damage = 4
@@ -82,10 +160,23 @@ min_hitchance = 75
 max_hitchance = 95
 icon = ExtResource("7_rw8wj")
 
+[sub_resource type="Resource" id="Resource_d0ug0"]
+script = ExtResource("2_2rscv")
+name = "Powerful Shot"
+skill_base = "attack_ranged"
+skill_desc = ""
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
 [sub_resource type="Resource" id="Resource_e2su7"]
 script = ExtResource("2_2rscv")
 name = "Ranged Attack"
 skill_base = "attack_ranged"
+skill_desc = ""
 min_range = 2
 max_range = 4
 min_damage = 1
@@ -98,6 +189,7 @@ icon = ExtResource("7_rw8wj")
 script = ExtResource("2_2rscv")
 name = "Rend"
 skill_base = "attack_melee"
+skill_desc = ""
 min_range = 1
 max_range = 1
 min_damage = 5
@@ -110,6 +202,7 @@ icon = ExtResource("4_5lmlh")
 script = ExtResource("2_2rscv")
 name = "Sand Storm"
 skill_base = "attack_magic"
+skill_desc = ""
 min_range = 0
 max_range = 0
 min_damage = 7
@@ -122,6 +215,7 @@ icon = ExtResource("8_05xw5")
 script = ExtResource("2_2rscv")
 name = "Sand Trap"
 skill_base = "attack_magic"
+skill_desc = ""
 min_range = 0
 max_range = 0
 min_damage = 3
@@ -130,17 +224,167 @@ min_hitchance = 85
 max_hitchance = 99
 icon = ExtResource("9_ykw4k")
 
+[sub_resource type="Resource" id="Resource_3yde5"]
+script = ExtResource("2_2rscv")
+name = "Sniper Shot"
+skill_base = "attack_ranged"
+skill_desc = ""
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
+[sub_resource type="Resource" id="Resource_h277v"]
+script = ExtResource("2_2rscv")
+name = "Warcry"
+skill_base = "attack_melee"
+skill_desc = ""
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
+[sub_resource type="Resource" id="Resource_mvoty"]
+script = ExtResource("2_2rscv")
+name = "Spin2Win"
+skill_base = "attack_melee"
+skill_desc = "Can not be stopped unless killed or disarmed"
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
+[sub_resource type="Resource" id="Resource_h56ab"]
+script = ExtResource("2_2rscv")
+name = "Javelin"
+skill_base = "attack_melee"
+skill_desc = "Just yeet it, for Michael"
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
+[sub_resource type="Resource" id="Resource_6geyu"]
+script = ExtResource("2_2rscv")
+name = "First Aid"
+skill_base = "attack_melee"
+skill_desc = ""
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
+[sub_resource type="Resource" id="Resource_ph2a6"]
+script = ExtResource("2_2rscv")
+name = "Retaliation"
+skill_base = "attack_melee"
+skill_desc = "Return a melee strike with one of your own"
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
+[sub_resource type="Resource" id="Resource_xwyva"]
+script = ExtResource("2_2rscv")
+name = "Magic Spike"
+skill_base = "attack_magic"
+skill_desc = "Element determined by caster tile"
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
+[sub_resource type="Resource" id="Resource_8boqm"]
+script = ExtResource("2_2rscv")
+name = "Nature's Curse"
+skill_base = "attack_magic"
+skill_desc = "Earth element DoT"
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
+[sub_resource type="Resource" id="Resource_ybtst"]
+script = ExtResource("2_2rscv")
+name = "Spontaneous Growth"
+skill_base = "attack_magic"
+skill_desc = "They're not going anywhere"
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
+[sub_resource type="Resource" id="Resource_sxgmj"]
+script = ExtResource("2_2rscv")
+name = "Call the Spirits"
+skill_base = "attack_magic"
+skill_desc = ""
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
+[sub_resource type="Resource" id="Resource_boyaw"]
+script = ExtResource("2_2rscv")
+name = "Earthen Bulwark"
+skill_base = "attack_magic"
+skill_desc = "Reinforce the target's armor"
+min_range = 0
+max_range = 0
+min_damage = 0
+max_damage = 0
+min_hitchance = 0
+max_hitchance = 0
+
 [node name="SkillData" type="Node"]
 script = ExtResource("1_vfxb3")
 skills = {
+"Arrowtoknee": SubResource("Resource_oeefa"),
+"Bulwark": SubResource("Resource_boyaw"),
+"Callspirits": SubResource("Resource_sxgmj"),
+"Camouflage": SubResource("Resource_1qbr7"),
+"Chargemagic": SubResource("Resource_yw01o"),
+"Elementstrike": SubResource("Resource_6w1pj"),
 "Fireball": SubResource("Resource_cjyac"),
+"Firstaid": SubResource("Resource_6geyu"),
 "Icewall": SubResource("Resource_acmlu"),
+"Javelin": SubResource("Resource_h56ab"),
 "Magicattack": SubResource("Resource_b661n"),
+"Magiccurse": SubResource("Resource_w8j0o"),
+"Magicspike": SubResource("Resource_xwyva"),
+"Manaward": SubResource("Resource_kqj40"),
 "Meleeattack": SubResource("Resource_f855i"),
 "Meteor": SubResource("Resource_uq46d"),
 "Mudshot": SubResource("Resource_24ipm"),
+"Naturecurse": SubResource("Resource_8boqm"),
+"Powershot": SubResource("Resource_d0ug0"),
 "Rangeattack": SubResource("Resource_e2su7"),
 "Rend": SubResource("Resource_esfkw"),
+"Retaliation": SubResource("Resource_ph2a6"),
 "Sandstorm": SubResource("Resource_mua26"),
-"Sandtrap": SubResource("Resource_dmx05")
+"Sandtrap": SubResource("Resource_dmx05"),
+"Snipershot": SubResource("Resource_3yde5"),
+"Spontgrow": SubResource("Resource_ybtst"),
+"Warcry": SubResource("Resource_h277v"),
+"Whirlwind": SubResource("Resource_mvoty")
 }

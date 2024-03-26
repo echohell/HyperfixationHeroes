@@ -1,8 +1,6 @@
-res://MainScene.tscn
+res://skill_data.tscn
 res://Combat.gd
 res://unit_path_tileset.tres
 res://new_tile_set.tres
 res://Inventory/UI/PlayerInventory.tres
-res://in_house.tscn
-res://Unit.tscn
-res://combatant_data.tscn
+res://SkillData.gd
