@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://OnfieldUnit.gd" id="1_ik87l"]
 [ext_resource type="Resource" uid="uid://lcpjxqnnhp2e" path="res://Grid.tres" id="2_0r15v"]
 [ext_resource type="Texture2D" uid="uid://c2pqk2ecg7obs" path="res://shadow.png" id="3_7y0li"]
-[ext_resource type="Texture2D" uid="uid://crp52x171d51g" path="res://Resources/Images/testimages/characterblocking.png" id="4_obi1e"]
-[ext_resource type="Texture2D" uid="uid://8tubwdce6iol" path="res://Resources/Images/HUD-UI/white32s/white32pointed.png" id="5_sut1h"]
+[ext_resource type="Texture2D" uid="uid://hfidnr82gm2q" path="res://Resources/Images/testimages/48pidle/48pknightpoc.png" id="4_whqeb"]
+[ext_resource type="Texture2D" uid="uid://bcyndijw8ncfv" path="res://Resources/Images/lights and shadows/radial_point_light.png" id="5_o3g2m"]
 
 [sub_resource type="Animation" id="Animation_jqpc2"]
 length = 0.001
@@ -19,6 +19,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PathFollow2D/Image:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_aggwy"]
@@ -40,7 +52,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_8csmy"]
 resource_name = "idle"
-length = 0.001
+length = 1.3
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -52,6 +65,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PathFollow2D/Image:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 11]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PathFollow2D/Image/PointLight2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -27), Vector2(0, -31), Vector2(0, -26), Vector2(0, -27)]
 }
 
 [sub_resource type="Animation" id="Animation_ec2x8"]
@@ -90,22 +127,26 @@ loop = false
 
 [node name="Shadow" type="Sprite2D" parent="PathFollow2D"]
 modulate = Color(0.109804, 0.109804, 0.109804, 1)
-position = Vector2(0, 1)
+position = Vector2(1, 3)
+scale = Vector2(0.8125, 2.09375)
 texture = ExtResource("3_7y0li")
 
 [node name="Image" type="Sprite2D" parent="PathFollow2D"]
-texture = ExtResource("4_obi1e")
+position = Vector2(0, 8)
+texture = ExtResource("4_whqeb")
 offset = Vector2(0, -20)
+hframes = 12
 
 [node name="PointLight2D" type="PointLight2D" parent="PathFollow2D/Image"]
-position = Vector2(59, 9.53674e-07)
-scale = Vector2(3.6875, 2.1875)
-texture = ExtResource("5_sut1h")
+position = Vector2(0, -27)
+scale = Vector2(1.90625, 1.90625)
+color = Color(0.47451, 0.47451, 0.47451, 1)
+texture = ExtResource("5_o3g2m")
 
 [node name="Focus" type="Sprite2D" parent="PathFollow2D/Image"]
 position = Vector2(-37, -23)
 rotation = -1.5708
-scale = Vector2(0.75, 1)
+scale = Vector2(0.75, 0.75)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -124,3 +124,27 @@ expand_mode = 2
 libraries = {
 "": SubResource("AnimationLibrary_heoi1")
 }
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 39.0
+offset_right = 63.0
+offset_bottom = 63.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 20.0
+offset_bottom = 24.0
+bbcode_enabled = true
+fit_content = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+bbcode_enabled = true
+fit_content = true

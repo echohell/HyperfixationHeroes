@@ -10,14 +10,15 @@
 custom_minimum_size = Vector2(151, 116)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 640.0
+offset_right = 638.0
 offset_bottom = 329.0
 script = ExtResource("1_r6dq2")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_right = 640.0
-offset_bottom = 330.0
+offset_top = 2.0
+offset_right = 638.0
+offset_bottom = 325.0
 texture = ExtResource("2_d3o8u")
 patch_margin_left = 5
 patch_margin_top = 5
@@ -88,9 +89,9 @@ layout_mode = 2
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 10.0
+offset_top = 12.0
 offset_right = 249.0
-offset_bottom = 320.0
+offset_bottom = 322.0
 texture = ExtResource("2_d3o8u")
 patch_margin_left = 10
 patch_margin_top = 10

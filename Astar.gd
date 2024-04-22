@@ -44,5 +44,7 @@ func calculate_point_path(start: Vector2, end: Vector2) -> PackedVector2Array:
 
 func combat_map_update(array_of_tiles: Array):                          # pass in an array of tiles
 	for array_data in array_of_tiles:
-		_astar.set_point_solid(array_data)                               # set those tiles as solid
-		_solid_points_array.append(array_data)                   # append data to solid point array
+		var _endy = array_data.y
+		if (_endy > 3 and _endy <= 17):
+			_astar.set_point_solid(array_data)                               # set those tiles as solid
+			_solid_points_array.append(array_data)                   # append data to solid point array

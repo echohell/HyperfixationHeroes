@@ -2,11 +2,18 @@ extends Control
 
 @export var combat: Combat
 @export var gameboard: GameBoard
+const texture = preload("res://Resources/Images/HUD-UI/black32s/black32square.png")
 
 signal turn_ended()                                                          # sends signal from UI
 
 const TQIcon = preload("res://TQIcon.tscn")                                   # const var for icons
 const StatusIcon = preload("res://PlayerStatus.tscn")                        # const var for status
+
+func _ready():
+	var new_icon = TQIcon.instantiate()
+	$TurnQueue/Queue.add_child(new_icon)                               # add as child to hbox queue
+	new_icon.texture = texture
+	new_icon.set_wave_text("WAVE: \n 1")
 
 func add_turn_queue_icon(combatant: Dictionary):
 	var new_icon = TQIcon.instantiate()                             # adds turn queue icons to hbox
@@ -14,7 +21,7 @@ func add_turn_queue_icon(combatant: Dictionary):
 	new_icon.texture = combatant.icon                                                # set the icon
 	new_icon.name = combatant.name                                                   # set the name
 	new_icon.set_side(combatant.side)                                        # set the side (color)
-
+	new_icon.set_text(str(combatant.action_value))
 
 func _on_combat_processing_update_turn_queue(combatants: Array, turn_queue: Array):
 	for i in turn_queue:                                              # for variables in turn queue

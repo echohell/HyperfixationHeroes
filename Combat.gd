@@ -19,6 +19,7 @@ var combatants = []                                                           # 
 var current_combatant = 0                                                   # the current combatant
 var turn = 0                                    # simple val for tracking turn forward, keep global
 var turn_queue = []                                                    # array for whose turn it is
+var bgmap: TileMap
 
 @onready var _unit = load("res://Unit.tscn")                # loads unit scene to instantiate units
 
@@ -40,14 +41,19 @@ var skills_list = [
 
 
 func _ready():
-	emit_signal("register_combat_start", self)                                 # combat has started
 	randomize()                                                           # setup randomized values
+
+
+func begin_combat():
+	bgmap = get_parent().get_node("Background Tiles")
+	
+	emit_signal("register_combat_start", self)                                 # combat has started
 						# add combatants with the information (Base template, name, side, position)
-	add_combatant(create_combatant(CombatantData.combatants["Player"], "Player"), 0, Vector2i(15,8))
-	add_combatant(create_combatant(CombatantData.combatants["Player"], "Player2"), 0, Vector2i(7,9))
-	add_combatant(create_combatant(CombatantData.combatants["Player"], "Player3"), 0, Vector2i(25,5))
-	add_combatant(create_combatant(CombatantData.combatants["Player"], "Player4"), 0, Vector2i(13,15))
-	add_combatant(create_combatant(CombatantData.combatants["Player"], "Enemy"), 1, Vector2i(35,6))
+	add_combatant(create_combatant(CombatantData.combatants["Player"], "Player"), 0, Vector2i(15,9))
+	add_combatant(create_combatant(CombatantData.combatants["Player"], "Player2"), 0, Vector2i(13,9))
+	add_combatant(create_combatant(CombatantData.combatants["Player"], "Player3"), 0, Vector2i(11,12))
+	add_combatant(create_combatant(CombatantData.combatants["Player"], "Enemy"), 1, Vector2i(33,6))
+	add_combatant(create_combatant(CombatantData.combatants["Player"], "Enemy2"), 1, Vector2i(37,6))
 													 # when combatants are added, update turn queue
 	emit_signal("update_turn_queue", combatants, turn_queue)
 	
@@ -68,9 +74,10 @@ func create_combatant(definition: CombatantDefinition, override_name = ""):
 		"icon" = definition.icon,
 		"map_sprite" = definition.map_sprite,
 		"movement" = definition.movement,
+		"action_value" = (1000 / int(definition.movement * definition.initiative)),
 		"initiative" = definition.initiative,
 		"turn_taken" = false,
-		"unit" = definition.unit
+		"unit" = definition.unit,
 	}
 	
 	if override_name != "":
@@ -90,20 +97,26 @@ func add_combatant(combatant: Dictionary, side: int, _position: Vector2i):
 	groups[side].append(combatants.size() - 1)               # append to groups of the correct side
 	
 	var new_sprite = Sprite2D.new()
-	new_sprite.position = Vector2(_position * 32) + Vector2(16, -4)      # sets relative sprite pos
-	$"../../Background Tiles".add_child(new_sprite)             # sprite while being null, is still
+	new_sprite.position = Vector2(_position * 32) + Vector2(16, 16)      # sets relative sprite pos
+	
+	bgmap.add_child(new_sprite)                                 # sprite while being null, is still
 													  # something we can move around to follow unit
+	
+	# this would be where "combatant" position checks team setup and adds in speed from gear and
+	# passive skills to decide new initiative
 	
 	if side == 0:                                                               # side 0 is players
 		var _usable_unit = _unit.instantiate()      # .unit is the scene that connects to tile move
 		_usable_unit.position = Vector2(_position * 32)                 # set position by cell size
 		_usable_unit.set_move_range(combatant.movement)                # set the move range of base
+		_usable_unit.name = combatant["name"]
 		_playergroup.add_child(_usable_unit)                               # add it to player group
 	
 	elif side == 1:                                                               # side 1 is enemy
 		var _usable_unit = _unit.instantiate()      # .unit is the scene that connects to tile move 
 		_usable_unit.position = Vector2(_position * 32)                 # set position by cell size
 		_usable_unit.set_move_range(combatant.movement)                # set the move range of base
+		_usable_unit.name = combatant["name"]
 		_enemygroup.add_child(_usable_unit)                                 # add it to enemy group
 	
 	else:
@@ -114,12 +127,14 @@ func add_combatant(combatant: Dictionary, side: int, _position: Vector2i):
 	turn_queue.append(combatants.size() - 1)                   # append size to the turn queue list
 	turn_queue.sort_custom(sort_turn_queue)                      # sort based on initiative numbers
 	
+	print("my name is " + str(combatant.name) + " and my initiative is " + str(combatant.initiative) + ".")
+	
 	emit_signal("combatant_added", combatant)       # emit signal that the combatant has been added
 
 
 func sort_turn_queue(a, b):                          # simple sorting of initiative for combat turn
 	
-	if combatants[b].initiative < combatants[a].initiative:
+	if combatants[b].initiative > combatants[a].initiative:
 		return true
 	else:
 		return false
@@ -181,6 +196,8 @@ func set_next_combatant():
 	current_combatant = turn_queue[turn]                             # update the current combatant
 
 func advance_turn():
+	_gameboard._on_cancel_pressed()
+	
 	combatants[current_combatant].turn_taken = true                        # set turn taken to true
 	set_next_combatant()                                                   # set the next combatant
 	while !combatants[current_combatant].alive:              # while the current combatant is alive
@@ -202,8 +219,6 @@ func do_damage(_attacker: Dictionary, target: Dictionary, skill: skillDefinition
 	target.hp -= damage                                                # take damage from target hp
 	update_combatants.emit(combatants)                                           # update combatant
 	update_information.emit("[center][color=white] Damage Taken by {0} for [color=red] {1}. [/color] \n\n".format([target.name, damage]))
-	
-	print(damage)
 	
 	if target.hp <= 0:                                                     # if the target has 0 hp
 		combatant_goes_down(target)                                     # call combat down function
@@ -260,7 +275,6 @@ func ai_process(comb : Dictionary):
 			if distance < l:
 				l = distance
 				nearest_target = target
-				print(nearest_target.name)
 					# this would be where we would have enemy attacks based on skills and distances
 		if get_distance(comb, nearest_target) == 1:   # get the distance to check if in melee range
 			attack(comb, nearest_target, "Meleeattack")      # attack with melee (spelling matters)

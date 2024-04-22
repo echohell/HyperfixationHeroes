@@ -1,0 +1,198 @@
+[gd_scene load_steps=24 format=3 uid="uid://c2ey6m5tyr6j0"]
+
+[ext_resource type="Script" path="res://GameBoard.gd" id="1_wvxab"]
+[ext_resource type="Resource" uid="uid://lcpjxqnnhp2e" path="res://Grid.tres" id="2_i0g1h"]
+[ext_resource type="Script" path="res://Combat.gd" id="3_ij1c7"]
+[ext_resource type="PackedScene" uid="uid://c5nf61tt778to" path="res://PlayerGroup.tscn" id="4_ft2r4"]
+[ext_resource type="PackedScene" uid="uid://356tvlvbsi6e" path="res://UI_Holder.tscn" id="5_2tr3w"]
+[ext_resource type="Texture2D" uid="uid://mprsyxkqy8bc" path="res://Resources/Images/equipment/Sword.png" id="6_qjppg"]
+[ext_resource type="Texture2D" uid="uid://dnb015a45mxt1" path="res://Resources/Images/actions/sandstorm.png" id="7_atrpg"]
+[ext_resource type="Texture2D" uid="uid://b5od0wiccoyqw" path="res://Resources/Images/equipment/ring1.png" id="8_uie28"]
+[ext_resource type="Texture2D" uid="uid://blpg7qv4rolxv" path="res://Resources/Images/equipment/chest.png" id="9_r40d7"]
+[ext_resource type="Texture2D" uid="uid://cqej4ofp7aftm" path="res://Resources/Images/equipment/boots.png" id="10_ekuwu"]
+[ext_resource type="Texture2D" uid="uid://7kgnhadakxxj" path="res://Resources/Images/equipment/pants.png" id="11_4x63x"]
+[ext_resource type="Texture2D" uid="uid://d3ywyd636wx77" path="res://Resources/Images/HUD-UI/Exit.png" id="12_utjnu"]
+[ext_resource type="Texture2D" uid="uid://douuc56mwyyax" path="res://Resources/Images/HUD-UI/white32s/white32radial.png" id="13_fiuy1"]
+[ext_resource type="Texture2D" uid="uid://dwkt0qh7gydfg" path="res://tileset_blocked.png" id="14_k5glw"]
+[ext_resource type="Script" path="res://BlockedTiles.gd" id="15_ao1x2"]
+[ext_resource type="Texture2D" uid="uid://cr3hr15ek50mj" path="res://tileset_unit_overlay.png" id="16_2kxcy"]
+[ext_resource type="Script" path="res://UnitOverlay.gd" id="17_ottl7"]
+[ext_resource type="PackedScene" uid="uid://dcq8k5wno3cys" path="res://UnitPath.tscn" id="18_mpyth"]
+[ext_resource type="PackedScene" uid="uid://cn0xh3ijhcd5j" path="res://Cursor.tscn" id="19_3x0d6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rqwtc"]
+texture = ExtResource("14_k5glw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_jp2ik"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_rqwtc")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6fedc"]
+texture = ExtResource("16_2kxcy")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2se0o"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_6fedc")
+
+[node name="GameBoard" type="Node2D" node_paths=PackedStringArray("combat", "_action_panel", "_playergroup")]
+script = ExtResource("1_wvxab")
+grid = ExtResource("2_i0g1h")
+combat = NodePath("CombatProcessing")
+_action_panel = NodePath("Camera2D/CombatHUD/ActionButtons")
+_playergroup = NodePath("PlayerGroup")
+
+[node name="CombatProcessing" type="Node2D" parent="." node_paths=PackedStringArray("_playergroup", "_enemygroup", "_combat_UI", "_gameboard")]
+script = ExtResource("3_ij1c7")
+_playergroup = NodePath("../PlayerGroup")
+_enemygroup = NodePath("../EnemyGroup")
+_combat_UI = NodePath("../Camera2D/CombatHUD/UIHolder")
+_gameboard = NodePath("..")
+
+[node name="PlayerGroup" parent="." instance=ExtResource("4_ft2r4")]
+
+[node name="EnemyGroup" type="Node2D" parent="."]
+
+[node name="BlockedTiles" type="TileMap" parent="."]
+modulate = Color(0.203922, 0.203922, 0.203922, 0.294118)
+tile_set = SubResource("TileSet_jp2ik")
+format = 2
+script = ExtResource("15_ao1x2")
+
+[node name="UnitOverlay" type="TileMap" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+tile_set = SubResource("TileSet_2se0o")
+format = 2
+script = ExtResource("17_ottl7")
+
+[node name="UnitPath" parent="." instance=ExtResource("18_mpyth")]
+
+[node name="Cursor" parent="." instance=ExtResource("19_3x0d6")]
+position = Vector2(16, 16)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="CombatHUD" type="CanvasLayer" parent="Camera2D"]
+
+[node name="UIHolder" parent="Camera2D/CombatHUD" node_paths=PackedStringArray("combat", "gameboard") instance=ExtResource("5_2tr3w")]
+combat = NodePath("../../../CombatProcessing")
+gameboard = NodePath("../../..")
+
+[node name="ActionButtons" type="Control" parent="Camera2D/CombatHUD"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="HolderPanel" type="Panel" parent="Camera2D/CombatHUD/ActionButtons"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = -105.0
+offset_right = 176.0
+offset_bottom = 136.0
+
+[node name="Attack" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "ATTACK"
+icon = ExtResource("6_qjppg")
+expand_icon = true
+
+[node name="Special" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "SPECIAL"
+icon = ExtResource("7_atrpg")
+expand_icon = true
+
+[node name="ActionContainer" type="VBoxContainer" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer/Special"]
+visible = false
+layout_mode = 0
+offset_left = 132.0
+offset_top = -54.0
+offset_right = 255.0
+offset_bottom = 82.0
+
+[node name="Action1" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer/Special/ActionContainer"]
+layout_mode = 2
+text = "ACTION 1"
+
+[node name="Action2" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer/Special/ActionContainer"]
+layout_mode = 2
+text = "ACTION 2"
+
+[node name="Action3" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer/Special/ActionContainer"]
+layout_mode = 2
+text = "ACTION 3"
+
+[node name="Action4" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer/Special/ActionContainer"]
+layout_mode = 2
+text = "ACTION 4"
+
+[node name="Item" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "ITEM"
+icon = ExtResource("8_uie28")
+expand_icon = true
+
+[node name="Defend" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "DEFEND"
+icon = ExtResource("9_r40d7")
+expand_icon = true
+
+[node name="Move" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer"]
+layout_mode = 2
+text = "MOVE"
+icon = ExtResource("10_ekuwu")
+expand_icon = true
+
+[node name="Auto" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "AUTO"
+icon = ExtResource("11_4x63x")
+expand_icon = true
+
+[node name="Cancel" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "CANCEL"
+icon = ExtResource("12_utjnu")
+expand_icon = true
+
+[node name="Endturn" type="Button" parent="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer"]
+layout_mode = 2
+text = "END TURN"
+icon = ExtResource("13_fiuy1")
+expand_icon = true
+
+[connection signal="combatant_added" from="CombatProcessing" to="." method="_on_combat_processing_combatant_added"]
+[connection signal="combatant_added" from="CombatProcessing" to="Camera2D/CombatHUD/UIHolder" method="_on_combat_processing_combatant_added"]
+[connection signal="combatant_down" from="CombatProcessing" to="." method="_on_combat_processing_combatant_down"]
+[connection signal="combatant_down" from="CombatProcessing" to="Camera2D/CombatHUD/UIHolder" method="_on_combat_processing_combatant_down"]
+[connection signal="turn_advance" from="CombatProcessing" to="." method="_on_combat_processing_turn_advance"]
+[connection signal="turn_advance" from="CombatProcessing" to="Camera2D/CombatHUD/UIHolder" method="_on_combat_processing_turn_advance"]
+[connection signal="update_combatants" from="CombatProcessing" to="Camera2D/CombatHUD/UIHolder" method="_on_combat_processing_update_combatants"]
+[connection signal="update_information" from="CombatProcessing" to="Camera2D/CombatHUD/UIHolder" method="_on_combat_processing_update_information"]
+[connection signal="update_turn_queue" from="CombatProcessing" to="Camera2D/CombatHUD/UIHolder" method="_on_combat_processing_update_turn_queue"]
+[connection signal="accept_pressed" from="Cursor" to="." method="_on_cursor_accept_pressed"]
+[connection signal="moved" from="Cursor" to="." method="_on_cursor_moved"]
+[connection signal="turn_ended" from="Camera2D/CombatHUD/UIHolder" to="CombatProcessing" method="advance_turn"]
+[connection signal="toggled" from="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer/Special" to="Camera2D/CombatHUD/UIHolder" method="_on_special_toggled"]
+[connection signal="pressed" from="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer/Move" to="." method="_on_move_pressed"]
+[connection signal="pressed" from="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="Camera2D/CombatHUD/ActionButtons/HolderPanel/VBoxContainer/Endturn" to="Camera2D/CombatHUD/UIHolder" method="_on_end_turn_button_pressed"]
